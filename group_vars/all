@@ -1,9 +1,14 @@
 default_roles:
   - system
   - firefox
-  - rofi
   - vscode
   - 1password
   - discord
   - neovim
   - poddr
+  - rofi
+  - i3
+  - picom
+  - bat
+  - zsh
+  - oh-my-zsh

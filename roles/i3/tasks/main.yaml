@@ -1,0 +1,14 @@
+---
+- name: Dependencies
+  ansible.builtin.package:
+    name:
+      - manjaro-pulse
+      - pa-applet
+      - pavucontrol
+    state: latest
+  become: yes
+
+- name: Configuration
+  ansible.builtin.template:
+    dest: "{{ ansible_user_dir }}/.i3/config"
+    src: "config.j2"
