@@ -27,12 +27,12 @@
 
 - name: Copy aliases.zsh
   ansible.builtin.template:
-    dest: "{{ ansible_user_dir }}/.oh-my-zsh/aliases.zsh"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/aliases.zsh"
     src: aliases.j2
 
 - name: Copy functions.zsh
   ansible.builtin.template:
-    dest: "{{ ansible_user_dir }}/.oh-my-zsh/functions.zsh"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/functions.zsh"
     src: functions.j2
 
 - name: Clone zsh-autosuggestions
