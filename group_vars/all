@@ -1,0 +1,9 @@
+default_roles:
+  - system
+  - firefox
+  - rofi
+  - vscode
+  - 1password
+  - discord
+  - neovim
+  - poddr

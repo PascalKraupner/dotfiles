@@ -1,0 +1,7 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - 1password
+      - 1password-cli

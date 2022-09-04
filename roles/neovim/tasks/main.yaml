@@ -1,0 +1,60 @@
+---
+- name: Dependencies
+  ansible.builtin.package:
+    name:
+      - base-devel
+      - cmake
+      - curl
+      - ninja
+      - tree-sitter
+      - unzip
+    state: latest
+  become: yes
+
+- name: Clone
+  ansible.builtin.git:
+    clone: yes
+    depth: 1
+    dest: "{{ ansible_user_dir }}/neovim_repo/neovim/neovim"
+    force: yes
+    repo: https://github.com/neovim/neovim.git
+    single_branch: yes
+    update: yes
+    version: "{{ neovim_version | default('master') }}"
+  register: clone
+
+- name: Build
+  make:
+    chdir: "{{ ansible_user_dir }}/neovim_repo/neovim/neovim"
+    params:
+      CMAKE_BUILD_TYPE: RelWithDebInfo
+  when: clone.changed
+
+- name: Install
+  make:
+    chdir: "{{ ansible_user_dir }}/neovim_repo/neovim/neovim"
+    target: install
+  become: yes
+  when: clone.changed
+
+- name: Remove build folder
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/neovim_repo/neovim/neovim/build"
+    state: absent
+  become: yes
+
+- name: Config folder
+  ansible.builtin.file:
+    mode: "0755"
+    path: "{{ ansible_user_dir }}/.config/nvim"
+    state: directory
+
+#- name: Copy init.lua
+#  ansible.builtin.copy:
+#    dest: "{{ ansible_user_dir }}/.config/nvim/init.lua"
+#    src: "init.lua"
+
+#- name: Copy modules
+#  ansible.builtin.copy:
+#    dest: "{{ ansible_user_dir }}/.config/nvim/lua"
+#    src: "lua/"

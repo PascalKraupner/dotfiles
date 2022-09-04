@@ -1,0 +1,9 @@
+---
+- name: Install
+  community.general.snap:
+    name:
+      - code
+    state: present
+    classic: yes
+  become: yes
+
