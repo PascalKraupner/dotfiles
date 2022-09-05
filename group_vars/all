@@ -12,3 +12,5 @@ default_roles:
   - bat
   - zsh
   - oh-my-zsh
+  - git
+  - ssh
