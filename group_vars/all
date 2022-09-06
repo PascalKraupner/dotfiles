@@ -14,3 +14,9 @@ default_roles:
   - oh-my-zsh
   - git
   - ssh
+  - notion-app
+  - spotify
+  - appimagelauncher
+  - chromium
+  - brave
+  - docker
