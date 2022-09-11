@@ -20,3 +20,4 @@ default_roles:
   - chromium
   - brave
   - docker
+  - kitty
