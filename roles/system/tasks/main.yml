@@ -1,4 +1,13 @@
 ---
+- name: Install dependencies
+  ansible.builtin.package:
+    name:
+      - ripgrep
+      - fd
+      - npm
+    state: latest
+  become: yes
+
 - name: Set sudo
   ansible.builtin.replace:
     path: "/etc/sudoers.d/10-installer"
