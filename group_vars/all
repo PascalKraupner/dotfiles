@@ -21,3 +21,4 @@ default_roles:
   - brave
   - docker
   - kitty
+  - tmux
