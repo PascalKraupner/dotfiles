@@ -5,6 +5,9 @@
       - ripgrep
       - fd
       - npm
+      - lazygit
+      - mpv
+      - yt-dlp
     state: latest
   become: yes
 

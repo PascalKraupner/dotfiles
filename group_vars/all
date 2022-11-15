@@ -22,3 +22,4 @@ default_roles:
   - docker
   - kitty
   - tmux
+  - xwinwrap

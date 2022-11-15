@@ -1,0 +1,14 @@
+require 'user.plugins'
+require 'user.options'
+require 'user.keymaps'
+require 'user.colorsheme'
+require 'user.lsp'
+require 'user.nvim-tree'
+require 'user.lualine'
+require 'user.telescope'
+require 'user.cmp'
+require "user.treesitter"
+require "user.toggleterm"
+require "user.autopairs"
+require "user.gitsigns"
+require "user.comment"
