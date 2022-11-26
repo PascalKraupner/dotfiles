@@ -35,6 +35,17 @@
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/functions.zsh"
     src: functions.j2
 
+- name: Create scripts folder
+  ansible.builtin.file:
+    path: "{{ ansible_user_dir }}/.local/scripts"
+    state: directory
+
+- name: Copy tmux-sessionizer
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.local/scripts/tmux-sessionizer"
+    src: tmux-sessionizer
+    mode: u+x
+
 - name: Clone zsh-autosuggestions
   ansible.builtin.git:
     clone: yes

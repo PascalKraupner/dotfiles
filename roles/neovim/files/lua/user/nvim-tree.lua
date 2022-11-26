@@ -5,5 +5,10 @@ require("nvim-tree").setup({
   renderer = {
     full_name = true,
     indent_width = 1
+  },
+  actions = {
+    open_file = {
+      quit_on_open = true,
+    }
   }
 })

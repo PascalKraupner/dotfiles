@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
     "html",
     "jsonls",
     "tsserver",
+    "volar",
   },
 })
 

@@ -15,7 +15,6 @@ default_roles:
   - git
   - ssh
   - notion-app
-  - spotify
   - appimagelauncher
   - chromium
   - brave
@@ -23,3 +22,4 @@ default_roles:
   - kitty
   - tmux
   - xwinwrap
+  - spotify

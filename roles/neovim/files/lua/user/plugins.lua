@@ -1,4 +1,3 @@
-
 local fn = vim.fn
 
 -- Automatically install packer
@@ -54,7 +53,8 @@ return packer.startup(function(use)
   use "leafOfTree/vim-matchtag"
   use "ThePrimeagen/vim-be-good"
   use "numToStr/Comment.nvim" -- Easily comment stuff
-
+  use 'famiu/bufdelete.nvim'
+  use 'ThePrimeagen/harpoon'
   -- Colorschemes
   use 'folke/tokyonight.nvim'
 
@@ -81,7 +81,7 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
- -- Treesitter
+  -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -89,8 +89,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   -- Git
   use "lewis6991/gitsigns.nvim"
 
