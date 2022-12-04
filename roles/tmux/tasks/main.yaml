@@ -6,3 +6,18 @@
       - tmux
     state: latest
   become: yes
+  
+- name: Clone tpm-plugins
+  ansible.builtin.git:
+    clone: yes
+    depth: 1
+    dest: "{{ ansible_user_dir }}/.tmux/plugins/tpm"
+    repo: https://github.com/tmux-plugins/tpm
+    single_branch: yes
+    update: yes
+    version: master
+
+- name: Copy tmux config
+  ansible.builtin.copy:
+    dest: "{{ ansible_user_dir }}/.tmux.conf"
+    src: .tmux.conf

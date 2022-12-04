@@ -8,6 +8,8 @@
       - lazygit
       - mpv
       - yt-dlp
+      - pandoc
+      - texlive-most
     state: latest
   become: yes
 

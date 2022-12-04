@@ -22,4 +22,4 @@ default_roles:
   - kitty
   - tmux
   - xwinwrap
-  - spotify
+#  - spotify

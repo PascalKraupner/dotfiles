@@ -10,6 +10,13 @@ require("mason-lspconfig").setup({
   },
 })
 
+require('mason-tool-installer').setup {
+  ensure_installed = {
+    'prettier',
+    'emmet-ls'
+  }
+}
+
 local lspconfig = require("lspconfig")
 
 local opts = {

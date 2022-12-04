@@ -29,7 +29,7 @@ if not status_ok then
   return
 end
 
--- Have packer use a popup window
+-- Have packer use a popup windoW
 packer.init {
   display = {
     open_fn = function()
@@ -55,6 +55,9 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'famiu/bufdelete.nvim'
   use 'ThePrimeagen/harpoon'
+  use 'christoomey/vim-tmux-navigator'
+  use 'szw/vim-maximizer'
+  use 'lukas-reineke/indent-blankline.nvim'
   -- Colorschemes
   use 'folke/tokyonight.nvim'
 
@@ -63,6 +66,7 @@ return packer.startup(function(use)
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
+    "WhoIsSethDaniel/mason-tool-installer.nvim"
   }
 
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters

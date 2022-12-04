@@ -76,6 +76,16 @@
     update: yes
     version: master
 
+- name: Clone send zsh
+  ansible.builtin.git:
+    clone: yes
+    depth: 1
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/send"
+    repo: https://github.com/robertzk/send.zsh.git
+    single_branch: yes
+    update: yes
+    version: master
+
 - name: Clone zsh-z
   ansible.builtin.git:
     clone: yes
