@@ -58,6 +58,7 @@ return packer.startup(function(use)
   use 'christoomey/vim-tmux-navigator'
   use 'szw/vim-maximizer'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'norcalli/nvim-colorizer.lua'
   -- Colorschemes
   use 'folke/tokyonight.nvim'
 
