@@ -1,7 +1,6 @@
----
 - name: Install
-  kewlfft.aur.aur:
-    use: yay
-    state: latest
+  community.general.snap:
     name:
       - spotify
+    state: present
+  become: yes
