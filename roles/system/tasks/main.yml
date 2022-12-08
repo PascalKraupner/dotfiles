@@ -10,6 +10,7 @@
       - yt-dlp
       - pandoc
       - texlive-most
+      - caffeine
     state: latest
   become: yes
 
