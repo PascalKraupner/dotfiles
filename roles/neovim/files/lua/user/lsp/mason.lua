@@ -13,7 +13,8 @@ require("mason-lspconfig").setup({
 require('mason-tool-installer').setup {
   ensure_installed = {
     'prettier',
-    'emmet-ls'
+    'emmet-ls',
+    'astro-language-server'
   }
 }
 
