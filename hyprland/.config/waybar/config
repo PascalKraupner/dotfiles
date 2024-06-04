@@ -1,0 +1,20 @@
+{
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["battery", "tray"],
+    "tray": {
+        "spacing": 5
+},
+"battery": {
+	"format": "{icon} {capacity}%",
+	"format-icons": [
+		"",
+		"",
+		"",
+		"",
+		""
+	]
+	},
+}
+
+

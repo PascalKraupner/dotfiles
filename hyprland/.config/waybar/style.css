@@ -1,0 +1,24 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-size: 12px;
+}
+
+window#waybar {
+	background: rgba(0,0,0, 0.5);
+}
+
+#workspaces button {
+	color: white;
+	padding: 0 5px;
+}
+
+#workspaces button.active {
+	color: black;
+	background: white;
+}
+
+#tray {
+	padding-left: 10px;
+	padding-right: 10px;
+}
