@@ -9,4 +9,5 @@ sudo pacman -S --noconfirm git
 
 bash pacman.sh
 bash aur.sh
+bash shell.sh
 

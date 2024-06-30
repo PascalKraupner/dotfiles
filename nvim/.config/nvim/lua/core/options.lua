@@ -1,19 +1,36 @@
 vim.filetype.add({
-  pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+	pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
 local opt = vim.opt
 
-opt.number = true
-opt.relativenumber = true
+-- DISPLAY OPTIONS
+opt.number = true -- Show line numbers
+opt.relativenumber = true -- Show relative line numbers
+opt.termguicolors = true -- Enable 24-bit RGB color in the TUI
+opt.wrap = false -- Display lines as one long line
+opt.colorcolumn = "100" -- Highlight column at 100th character
+opt.signcolumn = "yes" -- Always show the sign column
+opt.conceallevel = 1 -- For concealing Markdown
 
-opt.termguicolors = true
+-- CLIPBOARD
+opt.clipboard = "unnamedplus" -- Use system clipboard
 
-opt.shiftwidth = 2
-opt.tabstop = 2
-opt.expandtab = true
-opt.autoindent = true
-opt.signcolumn = 'yes'
+-- INDENTATION
+opt.smartindent = true -- Enable smart indentation
+opt.autoindent = true -- Enable automatic indentation
+opt.shiftwidth = 2 -- Number of spaces for each indentation level
+opt.tabstop = 2 -- Number of spaces a tab character represents
+opt.expandtab = true -- Convert tabs to spaces
 
--- For concealing Markdown
-opt.conceallevel = 1
+-- PERFORMANCE
+opt.updatetime = 50 -- Faster completion (default is 4000ms)
+
+-- FILE MANAGEMENT
+opt.swapfile = false -- Disable swap file
+opt.backup = false -- Disable backup file
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir" -- Set undo directory
+opt.undofile = true -- Enable persistent undo
+
+-- SEARCHING
+opt.hlsearch = false -- Disable highlight on search

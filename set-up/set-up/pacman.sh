@@ -1,6 +1,7 @@
 #!/bin/bash
 packages=(
 "firefox"
+"kitty"
 "timeshift"
 "nemo"
 "man"
@@ -48,6 +49,8 @@ packages=(
 "composer"
 "docker"
 "docker-compose"
+"fish"
+"starship"
 # NeoVIM
 "ripgrep"
 "fd"

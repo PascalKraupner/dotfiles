@@ -11,9 +11,10 @@ packages=(
 "sway-audio-idle-inhibit-git"
 "brave-bin"
 "ventoy-bin"
+"makemkv"
 )
 
 for package in "${packages[@]}"; do
 	echo "Installing $package"
-	paru --needed --noconfirm -S "$package"
+	yay --needed --noconfirm -S "$package"
 done

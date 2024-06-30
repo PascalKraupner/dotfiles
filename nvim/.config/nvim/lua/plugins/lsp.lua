@@ -6,6 +6,25 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
+		local signs = {
+			{ name = "DiagnosticSignError", text = "" },
+			{ name = "DiagnosticSignWarn", text = "" },
+			{ name = "DiagnosticSignHint", text = "" },
+			{ name = "DiagnosticSignInfo", text = "" },
+		}
+
+		for _, sign in ipairs(signs) do
+			vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+		end
+
+		local config = {
+			signs = {
+				active = signs,
+			},
+		}
+
+		vim.diagnostic.config(config)
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
 			callback = function(event)
@@ -66,6 +85,8 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"tsserver",
+				"volar",
+				"jsonls",
 				"html",
 				"cssls",
 				"tailwindcss",
