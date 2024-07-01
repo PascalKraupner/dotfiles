@@ -14,6 +14,7 @@ packages=(
 "makemkv"
 "localsend-bin"
 "flameshot-git"
+"smassh-bin"
 )
 
 for package in "${packages[@]}"; do

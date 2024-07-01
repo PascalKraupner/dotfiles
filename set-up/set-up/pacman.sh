@@ -18,7 +18,7 @@ packages=(
 "hyprpaper"
 "cmatrix"
 "btop"
-"neofetch"
+"fastfetch"
 "hyprlock"
 "ttf-nerd-fonts-symbols-mono"
 "ttf-jetbrains-mono"
@@ -55,7 +55,6 @@ packages=(
 # NeoVIM
 "ripgrep"
 "fd"
-"grim"
 )
 
 for package in "${packages[@]}"; do
