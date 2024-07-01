@@ -12,6 +12,8 @@ packages=(
 "brave-bin"
 "ventoy-bin"
 "makemkv"
+"localsend-bin"
+"flameshot-git"
 )
 
 for package in "${packages[@]}"; do

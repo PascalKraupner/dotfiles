@@ -22,6 +22,7 @@ packages=(
 "hyprlock"
 "ttf-nerd-fonts-symbols-mono"
 "ttf-jetbrains-mono"
+"ttf-jetbrains-mono-nerd"
 "noto-fonts"
 "noto-fonts-emoji"
 "noto-fonts-cjk"
@@ -54,6 +55,7 @@ packages=(
 # NeoVIM
 "ripgrep"
 "fd"
+"grim"
 )
 
 for package in "${packages[@]}"; do
