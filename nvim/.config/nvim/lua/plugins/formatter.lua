@@ -11,6 +11,7 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
+				php = { "pint" },
 				lua = { "stylua" },
 			},
 			format_on_save = {

@@ -88,12 +88,12 @@ return {
 				"volar",
 				"jsonls",
 				"html",
+				"eslint",
 				"cssls",
 				"tailwindcss",
 				"lua_ls",
 				"phpactor",
 				"clangd",
-				"eslint",
 			},
 		})
 
@@ -101,6 +101,8 @@ return {
 			ensure_installed = {
 				"prettier",
 				"stylua",
+				"pylint",
+				"pint",
 			},
 		})
 
