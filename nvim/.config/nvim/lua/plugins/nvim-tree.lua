@@ -23,12 +23,11 @@ return {
 		-- recommended settings from nvim-tree documentation
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
-		local keymap = vim.keymap -- for conciseness
-		keymap.set(
-			"n",
-			"<leader>e",
-			"<cmd>NvimTreeFindFileToggle<CR>",
-			{ desc = "Toggle file explorer on current file" }
-		) -- toggle file explorer on current file}
+
+		local api = require("nvim-tree.api")
+		local keymap = vim.keymap
+		keymap.set("n", "<leader>e", function()
+			api.tree.toggle()
+		end, { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file}
 	end,
 }
