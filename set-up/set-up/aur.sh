@@ -15,6 +15,7 @@ packages=(
 "localsend-bin"
 "flameshot-git"
 "smassh-bin"
+"wayland-pipewire-idle-inhibit"
 )
 
 for package in "${packages[@]}"; do
