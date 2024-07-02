@@ -112,6 +112,28 @@ return {
 					capabilities = capabilities,
 				})
 			end,
+			["tsserver"] = function()
+				lspconfig["tsserver"].setup({
+					capabilities = capabilities,
+					init_options = {
+						plugins = {
+							{
+								name = "@vue/typescript-plugin",
+								-- Need to be installed manually and path adjusted:
+								-- https://github.com/vuejs/language-tools/issues/3925
+								-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
+								location = "/Users/pascalmws/.nvm/versions/node/v16.20.2/lib/node_modules/@vue/typescript-plugin",
+								languages = { "javascript", "typescript", "vue" },
+							},
+						},
+					},
+					filetypes = {
+						"javascript",
+						"typescript",
+						"vue",
+					},
+				})
+			end,
 			["lua_ls"] = function()
 				lspconfig["lua_ls"].setup({
 					capabilities = capabilities,
