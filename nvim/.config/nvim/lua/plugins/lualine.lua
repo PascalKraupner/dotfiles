@@ -10,6 +10,13 @@ return {
 					path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
 				},
 			},
+			lualine_x = {
+				{
+					require("noice").api.statusline.mode.get,
+					cond = require("noice").api.statusline.mode.has,
+					color = { fg = "#ff9e64" },
+				},
+			},
 		},
 		options = {
 			component_separators = "|",
