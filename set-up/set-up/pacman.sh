@@ -52,6 +52,8 @@ packages=(
 "docker-compose"
 "fish"
 "starship"
+"electrum"
+"tmux"
 # NeoVIM
 "ripgrep"
 "fd"

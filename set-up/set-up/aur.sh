@@ -16,6 +16,8 @@ packages=(
 "flameshot-git"
 "smassh-bin"
 "wayland-pipewire-idle-inhibit"
+"spacecadetpinball"
+"cpu-x"
 )
 
 for package in "${packages[@]}"; do
