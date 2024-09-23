@@ -122,7 +122,7 @@ return {
 								-- Need to be installed manually and path adjusted:
 								-- https://github.com/vuejs/language-tools/issues/3925
 								-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-								location = "/Users/pascalmws/.nvm/versions/node/v16.20.2/lib/node_modules/@vue/typescript-plugin",
+								location = "/usr/lib/node_modules/@vue/typescript-plugin",
 								languages = { "javascript", "typescript", "vue" },
 							},
 						},

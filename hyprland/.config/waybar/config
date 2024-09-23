@@ -1,12 +1,12 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["battery", "tray"],
+    "modules-right": ["idle_inhibitor", "battery", "tray"],
     "tray": {
         "spacing": 5
 },
 "battery": {
-	"format": "{icon} {capacity}%",
+	"format": "{icon}   {capacity}%",
 	"format-icons": [
 		"",
 		"",
@@ -15,6 +15,11 @@
 		""
 	]
 	},
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": ""
+    }
+},
 }
-
-

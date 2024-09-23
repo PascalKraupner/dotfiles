@@ -1,24 +1,34 @@
 * {
-	border: none;
-	border-radius: 0;
-	font-size: 12px;
+  border: none;
+  border-radius: 0;
+  font-size: 12px;
 }
 
 window#waybar {
-	background: rgba(0,0,0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
-
+#workspaces:first-child {
+  margin-left: 20px;
+}
 #workspaces button {
-	color: white;
-	padding: 0 5px;
+  color: white;
+  padding: 0 5px;
 }
 
 #workspaces button.active {
-	color: black;
-	background: white;
+  color: black;
+  background: white;
 }
 
 #tray {
-	padding-left: 10px;
-	padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#battery {
+  margin-right: 10px;
+}
+
+#idle_inhibitor {
+  margin-right: 20px;
 }
