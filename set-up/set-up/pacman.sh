@@ -1,7 +1,6 @@
 #!/bin/bash
 packages=(
 "firefox"
-"kitty"
 "timeshift"
 "nemo"
 "man"
@@ -54,6 +53,10 @@ packages=(
 "starship"
 "electrum"
 "tmux"
+"wezterm"
+"eza"
+"zoxide"
+"zellij"
 # NeoVIM
 "ripgrep"
 "fd"

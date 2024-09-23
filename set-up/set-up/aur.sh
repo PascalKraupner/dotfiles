@@ -1,6 +1,7 @@
 #!/bin/bash
 packages=(
 "librewolf-bin"
+"zen-browser-bin"
 "appimagelauncher"
 "pcloud-drive"
 "spotify"
