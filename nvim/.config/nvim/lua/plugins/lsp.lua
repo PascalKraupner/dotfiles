@@ -84,7 +84,7 @@ return {
 		local mason_tool_installer = require("mason-tool-installer")
 		mason_lspconfig.setup({
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"volar",
 				"jsonls",
 				"html",
@@ -112,8 +112,8 @@ return {
 					capabilities = capabilities,
 				})
 			end,
-			["tsserver"] = function()
-				lspconfig["tsserver"].setup({
+			["ts_ls"] = function()
+				lspconfig["ts_ls"].setup({
 					capabilities = capabilities,
 					init_options = {
 						plugins = {
