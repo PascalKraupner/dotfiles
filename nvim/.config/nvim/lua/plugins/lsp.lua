@@ -122,7 +122,10 @@ return {
 								-- Need to be installed manually and path adjusted:
 								-- https://github.com/vuejs/language-tools/issues/3925
 								-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-								location = "/usr/lib/node_modules/@vue/typescript-plugin",
+								-- https://github.com/mason-org/mason-registry/issues/5064
+								location = require("mason-registry")
+									.get_package("vue-language-server")
+									:get_install_path() .. "/node_modules/@vue/language-server",
 								languages = { "javascript", "typescript", "vue" },
 							},
 						},
