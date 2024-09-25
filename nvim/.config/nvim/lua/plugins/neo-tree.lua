@@ -8,6 +8,6 @@ return {
 	config = function()
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
-		vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
+		vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle reveal<CR>", { noremap = true, silent = true })
 	end,
 }
