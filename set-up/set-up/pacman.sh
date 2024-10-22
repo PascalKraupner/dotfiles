@@ -53,7 +53,7 @@ packages=(
 "starship"
 "electrum"
 "tmux"
-"wezterm"
+"kitty"
 "eza"
 "zoxide"
 "zellij"

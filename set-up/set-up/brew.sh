@@ -5,7 +5,7 @@ packages=(
 "tmux"
 "nikitabobko/tap/aerospace"
 "font-jetbrains-mono-nerd-font"
-"wezterm"
+"kitty"
 "firefox"
 "sketchybar"
 "1password"
