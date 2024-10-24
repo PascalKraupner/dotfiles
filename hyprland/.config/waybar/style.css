@@ -32,3 +32,6 @@ window#waybar {
 #idle_inhibitor {
   margin-right: 20px;
 }
+#custom-audio_idle_inhibitor {
+  margin-right: 20px;
+}

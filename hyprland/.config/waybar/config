@@ -1,7 +1,7 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "battery", "tray"],
+    "modules-right": ["custom/audio_idle_inhibitor", "idle_inhibitor", "battery", "tray"],
     "tray": {
         "spacing": 5
 },
@@ -22,4 +22,16 @@
         "deactivated": ""
     }
 },
+	"custom/audio_idle_inhibitor": {
+		"format": "{icon}",
+		"exec": "sway-audio-idle-inhibit --dry-print-both-waybar",
+		"exec-if": "which sway-audio-idle-inhibit",
+		"return-type": "json",
+		"format-icons": {
+			"output": "",
+			"input": "",
+			"output-input": "  ",
+			"none": ""
+		}
+	},
 }
