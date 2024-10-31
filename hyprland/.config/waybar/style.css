@@ -103,12 +103,12 @@ button:hover {
 }
 
 #custom-audio_idle_inhibitor {
-  color: #7cb342;
+  color: @teal;
 }
 
 #idle_inhibitor {
   margin-right: 12px;
-  color: #7cb342;
+  color: @teal;
 }
 
 #idle_inhibitor.activated {
