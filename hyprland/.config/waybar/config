@@ -1,20 +1,23 @@
 {
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/audio_idle_inhibitor", "idle_inhibitor", "battery", "tray"],
+    "modules-right": ["custom/audio_idle_inhibitor", "idle_inhibitor", "battery", "pulseaudio", "network", "tray"],
     "tray": {
         "spacing": 5
 },
 "battery": {
-	"format": "{icon}   {capacity}%",
-	"format-icons": [
-		"",
-		"",
-		"",
-		"",
-		""
-	]
-	},
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}   {capacity}%",
+    "format-charging": "   {capacity}%",
+    "format-plugged": "   {capacity}%",
+    "format-alt": "{icon}   {time}",
+    "format-full": "   {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -34,4 +37,19 @@
 			"none": ""
 		}
 	},
+  "network": {
+    "format-wifi": "    {essid}",
+    "format-ethernet": "󰤭    Disconnected",
+    "format-linked": "󰩟",
+    "format-disconnected": "    Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+        "default": ["", "", " "]
+    },
+    "on-click": "pavucontrol"
+}
 }

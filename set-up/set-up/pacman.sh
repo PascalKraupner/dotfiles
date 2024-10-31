@@ -12,7 +12,6 @@ packages=(
 "bluez-utils"
 "brightnessctl"
 "guvcview"
-"dunst"
 "libappindicator-gtk3"
 "hyprpaper"
 "cmatrix"
@@ -57,6 +56,7 @@ packages=(
 "eza"
 "zoxide"
 "zellij"
+"swaync"
 # NeoVIM
 "ripgrep"
 "fd"

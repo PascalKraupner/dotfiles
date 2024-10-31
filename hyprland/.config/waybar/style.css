@@ -1,37 +1,131 @@
+@import "frappe.css";
+
 * {
-  border: none;
-  border-radius: 0;
-  font-size: 12px;
+  font-family: "JetBrains Mono Regular";
+  font-size: 14px;
+  min-height: 0;
+  font-weight: bold;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  background-color: @crust;
+  color: @overlay0;
+  transition-property: background-color;
+  transition-duration: 0.1s;
+  border-bottom: 1px solid @overlay1;
 }
-#workspaces:first-child {
-  margin-left: 20px;
+
+#workspaces button:first-child {
+  margin-left: 10px;
 }
+
+#window {
+  margin: 8px;
+  padding-left: 8;
+  padding-right: 8;
+}
+
+button {
+  box-shadow: inset 0 -3px transparent;
+  border: none;
+  border-radius: 0;
+}
+
+button:hover {
+  background: inherit;
+  color: @mauve;
+  border-top: 2px solid @mauve;
+}
+
 #workspaces button {
-  color: white;
-  padding: 0 5px;
+  border-top: 2px solid transparent;
+  padding: 0 4px;
+}
+
+#workspaces button.focused {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: @rosewater;
+  border-top: 2px solid @rosewater;
 }
 
 #workspaces button.active {
-  color: black;
-  background: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: @mauve;
+  border-top: 2px solid @mauve;
 }
 
-#tray {
-  padding-left: 10px;
-  padding-right: 10px;
+#workspaces button.urgent {
+  background-color: #eb4d4b;
 }
 
-#battery {
-  margin-right: 10px;
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#network,
+#mode,
+#idle_inhibitor,
+#custom-audio_idle_inhibitor,
+#scratchpad {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#clock {
+  color: @maroon;
+  border-bottom: 2px solid @maroon;
+}
+
+#clock.date {
+  color: @mauve;
+  border-bottom: 2px solid @mauve;
+}
+
+#pulseaudio {
+  color: @blue;
+  border-bottom: 2px solid @blue;
+}
+
+#network {
+  color: @yellow;
+  border-bottom: 2px solid @yellow;
+}
+
+#custom-audio_idle_inhibitor {
+  color: #7cb342;
 }
 
 #idle_inhibitor {
-  margin-right: 20px;
+  margin-right: 12px;
+  color: #7cb342;
 }
-#custom-audio_idle_inhibitor {
-  margin-right: 20px;
+
+#idle_inhibitor.activated {
+  color: @red;
+}
+
+#battery {
+  color: @green;
+  border-bottom: 2px solid @green;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
 }

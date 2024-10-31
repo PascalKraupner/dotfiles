@@ -14,11 +14,11 @@ packages=(
 "ventoy-bin"
 "makemkv"
 "localsend-bin"
-"flameshot-git"
 "smassh-bin"
 "wayland-pipewire-idle-inhibit"
 "spacecadetpinball"
 "cpu-x"
+"hyprshot"
 )
 
 for package in "${packages[@]}"; do
