@@ -6,6 +6,8 @@ end
 
 fish_add_path ~/bin
 
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+
 starship init fish | source
 zoxide init --cmd cd fish | source
 
