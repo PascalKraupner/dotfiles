@@ -4,6 +4,8 @@ if test (uname) = "Darwin"
     set -gx PATH /opt/homebrew/bin $PATH
 end
 
+fish_add_path ~/bin
+
 starship init fish | source
 zoxide init --cmd cd fish | source
 
