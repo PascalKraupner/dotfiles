@@ -1,2 +1,3 @@
 #!/bin/bash
-chsh -s /usr/bin/fish
+#for mac os add result of $(which fish) to /etc/shells
+chsh -s $(which fish)
