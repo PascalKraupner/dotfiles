@@ -4,6 +4,8 @@ if test (uname) = "Darwin"
     set -gx PATH /opt/homebrew/bin $PATH
 end
 
+fish_add_path ~/.config/herd-lite/bin
+
 fish_add_path ~/bin
 
 alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
