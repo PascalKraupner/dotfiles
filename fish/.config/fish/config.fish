@@ -4,6 +4,9 @@ if test (uname) = "Darwin"
     set -gx PATH /opt/homebrew/bin $PATH
 end
 
+
+set -gx TERM xterm-256color
+
 fish_add_path ~/.config/herd-lite/bin
 
 fish_add_path ~/bin
