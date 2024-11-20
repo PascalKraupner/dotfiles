@@ -1,5 +1,10 @@
 #!/bin/bash
 packages=(
+"amd-ucode"
+"man-db"
+"man-pages"
+"texinfo"
+"newsflash"
 "firefox"
 "timeshift"
 "nemo"
