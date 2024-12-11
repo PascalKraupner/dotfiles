@@ -23,5 +23,5 @@ packages=(
 
 for package in "${packages[@]}"; do
 	echo "Installing $package"
-	yay --needed --noconfirm -S "$package"
+	paru --needed --noconfirm -S "$package"
 done

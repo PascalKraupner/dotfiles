@@ -65,6 +65,8 @@ packages=(
 # NeoVIM
 "ripgrep"
 "fd"
+#For power-profiles-daemon
+"python-gobject"
 )
 
 for package in "${packages[@]}"; do
