@@ -62,6 +62,9 @@ packages=(
 "zoxide"
 "zellij"
 "swaync"
+"fzf"
+"nvtop" #like htop but for gpu
+"powertop"
 # NeoVIM
 "ripgrep"
 "fd"
