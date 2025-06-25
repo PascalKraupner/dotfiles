@@ -1,0 +1,14 @@
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+set -e
+echo "[*] Arch post-install: changing shell, starting services"
+
+chsh -s $(which fish)
+mkdir -p ~/.local/share/mime/packages
+update-mime-database ~/.local/share/mime
+sudo systemctl enable --now bluetooth.service
+sudo systemctl enable --now docker.service
+systemctl --user enable --now gnome-keyring-daemon.socket
+sudo usermod -a -G docker $USER
+
+{{ end }}

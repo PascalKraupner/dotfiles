@@ -1,0 +1,18 @@
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+set -e
+
+echo "[✔ ]All setup steps completed successfully."
+
+read -p "Would you like to reboot now? [y/N]: " answer
+case "$answer" in
+  [yY][eE][sS]|[yY])
+    echo "Rebooting..."
+    reboot
+    ;;
+  *)
+    echo "You can reboot later with: reboot"
+    ;;
+esac
+{{ end }}
+

@@ -1,0 +1,18 @@
+font=JetBrainsMono Nerd Font 10
+border-size=1
+border-radius=4
+
+width=350
+padding=10
+
+default-timeout=5000
+
+icon-path=/usr/share/icons/Papirus
+
+progress-color=#ff0000
+background-color=#303446
+text-color=#c6d0f5
+border-color=#8caaee
+
+[urgency=high]
+border-color=#ef9f76

@@ -1,0 +1,99 @@
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+set -e
+
+packages=(
+  "docker"
+  "nemo"
+  "ffmpegthumbnailer"
+  "rofi-wayland"
+  "docker-compose"
+  "bluez"
+  "bluez-utils"
+  "ttf-jetbrains-mono-nerd"
+  "noto-fonts"
+  "noto-fonts-emoji"
+  "noto-fonts-cjk"
+  "noto-fonts-extra"
+  "man-db"
+  "man-pages"
+  "zellij"
+  "fastfetch"
+  "fish"
+  "starship"
+  "ghostty"
+  "eza"
+  "zoxide"
+  "firefox"
+  "guvcview"
+  "bitwarden"
+  "neovim"
+  "yt-dlp"
+  "vlc"
+  "hyprlock"
+  "hypridle"
+  "hyprpaper"
+  "hyprpolkitagent"
+  "waybar"
+  "nvtop" #like htop but for gpu
+  "btop"
+  "brightnessctl"
+  "mako"
+  "pavucontrol"
+  "playerctl"
+  "fprintd"
+  "power-profiles-daemon"
+  "npm"
+  "go"
+  "papirus-icon-theme"
+  "zulucrypt"
+  "qt5ct" 
+  "qt6ct" 
+  "adwaita-qt5"
+  "adwaita-qt6"
+  "thunderbird"
+  "protonmail-bridge"
+  "gnome-keyring"
+  "libsecret"
+  "sway-audio-idle-inhibit-git"
+  "hyprshot"
+  "discord"
+  "visidata" #csv/spreadsheet data tui viewer
+  "newsboat" #rss tui viewe
+  "yubico-authenticator-bin"
+  "glow" #tui markdown viewer
+  "brave-bin"
+  "proton-mail-bin"
+  "spotify"
+  "obsidian"
+  "xorg-xhost"
+  "xorg-xeyes"
+  "appimagelauncher"
+  #"mullvad-vpn-bin"
+)
+
+echo "[*] Detected Arch Linux"
+echo "[*] Installing paru AUR Helper"
+sudo -v
+if ! command -v paru &> /dev/null; then
+sudo pacman -Syu --noconfirm --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -sic --noconfirm
+cd ..
+rm -rf paru
+else
+  echo "[✔] paru is already installed — skipping."
+fi
+
+echo "[*] Installing packages"
+
+for package in "${packages[@]}"; do
+  echo "[*] Installing $package"
+  paru --needed --noconfirm -S "$package"
+done
+
+
+
+{{ end }}
+

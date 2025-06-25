@@ -1,0 +1,7 @@
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.hostname "archlinux-framework") -}}
+#!/bin/bash
+set -e
+echo "[*] Running specific Framework 13 configuration"
+echo "[*] Done"
+
+{{ end }}
