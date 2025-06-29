@@ -1,0 +1,45 @@
+{{ if and (eq .chezmoi.os "linux") (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+set -e
+appimage_urls=(
+    "https://github.com/Dygmalab/Bazecor/releases/download/v1.7.0/Bazecor-1.7.0-x64.AppImage"
+)
+
+# Create a temporary directory for downloading AppImages
+temp_dir=$(mktemp -d -t appimages-XXXXXX)
+echo "Temporary directory created at: $temp_dir"
+
+# Function to download and integrate AppImages
+download_and_integrate_appimages() {
+    for url in "${appimage_urls[@]}"; do
+        echo "Downloading AppImage from $url..."
+        wget -P "$temp_dir" "$url"
+        if [ $? -ne 0 ]; then
+            echo "Failed to download $url"
+            continue
+        fi
+        
+        # Extract the filename from the URL
+        filename=$(basename "$url")
+        
+        # Make the AppImage executable
+        chmod +x "$temp_dir/$filename"
+        
+        # Use ail-cli to integrate the AppImage
+        echo "Integrating $filename..."
+        ail-cli integrate "$temp_dir/$filename"
+        if [ $? -ne 0 ]; then
+            echo "Failed to integrate $filename"
+        else
+            echo "$filename integrated successfully."
+        fi
+    done
+}
+
+download_and_integrate_appimages
+
+# Clean up: Delete the temporary directory and its contents
+rm -rf "$temp_dir"
+echo "Temporary files cleaned up."
+
+{{ end }}
