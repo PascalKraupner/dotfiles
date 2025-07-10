@@ -74,3 +74,5 @@ chezmoi init yourusername --apply
 | `dotfiles-private` (private)                                  | Private Dotfiles |
 
 ---
+
+REMOVE README-CHEZMOI ALSO FROM .chezmoignore
