@@ -17,20 +17,16 @@
   "modules": [
     "clock#berlin",
     "clock#toronto",  
-    "clock#philippines",
   ]
 },
-"clock#berlin": {
-  "timezone": "Europe/Berlin",
-  "format": "🇩🇪 {:%I:%M %p}"
+"clock#standard": {
+  "format": "{:%I:%M %p}",
+  "tooltip": false
 },
 "clock#toronto": {
   "timezone": "America/Toronto",
-  "format": "👸🏻🇨🇦 {:%I:%M %p}"
-},
-"clock#philippines": {
-  "timezone": "Asia/Manila",
-  "format": "🇵🇭 {:%I:%M %p}"
+  "format": "🇨🇦 {:%I:%M %p}",
+  "tooltip": false
 },
 	"custom/audio_idle_inhibitor": {
 		"format": "{icon}",
