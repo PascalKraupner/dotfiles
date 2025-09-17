@@ -1,0 +1,16 @@
+plugins {
+  sessionpicker location="file:/home/pascal/.config/zellij/plugins/zellij-choose-tree.wasm"
+}
+
+keybinds {
+  tmux {
+    bind "s" {
+      LaunchOrFocusPlugin "sessionpicker" {
+        floating true
+        move_to_focused_tab true
+        show_plugins false
+      };
+      SwitchToMode "Locked";
+    }
+  }
+}
