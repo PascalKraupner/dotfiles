@@ -31,3 +31,11 @@ end
 function ls
     eza $argv
 end
+
+function clipboard-paste
+    commandline --insert (wl-paste)
+end
+
+if test "$fish_key_bindings" = fish_vi_key_bindings
+    bind -M default p clipboard-paste
+end
