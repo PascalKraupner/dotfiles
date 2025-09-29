@@ -53,15 +53,12 @@
     "tooltip-format": "{time}"
   },
 "hyprland/workspaces": {
-  "format": "{icon}",
-  "format-icons": {
-    "1": "",
-    "2": "",
-    "3": "",
-    "4": "",
-    "5": "",
-  }
-},
+    "format": "{name} : {icon}",
+    "format-icons": {
+      "active": "",
+      "default": ""
+    }
+  },
   "power-profiles-daemon": {
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}",
