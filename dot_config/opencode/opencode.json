@@ -1,7 +1,4 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "nord",
-  "permission": {
-    "edit": "ask"
-  }
+  "theme": "tokyonight"
 }
