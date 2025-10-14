@@ -2,13 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "tokyonight",
   "mcp": {
-    "brightdata-web": {
+    "tavily": {
       "type": "remote",
-      "url": "https://mcp.brightdata.com/mcp",
-      "enabled": true,
-      "headers": {
-        "Authorization": "Bearer {file:~/.secrets/brightdata_key}"
-      }
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={file:~/.secrets/tavily_key}",
+      "enabled": true
     },
     "context7": {
       "type": "remote",
