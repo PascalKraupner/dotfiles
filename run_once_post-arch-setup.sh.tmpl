@@ -8,6 +8,7 @@ mkdir -p ~/.local/share/mime/packages
 update-mime-database ~/.local/share/mime
 sudo systemctl enable --now bluetooth.service
 sudo systemctl enable --now docker.service
+sudo systemctl enable --now tailscaled.service
 systemctl --user enable --now gnome-keyring-daemon.socket
 sudo usermod -a -G docker $USER
 
