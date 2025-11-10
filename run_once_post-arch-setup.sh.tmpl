@@ -15,4 +15,8 @@ sudo usermod -a -G docker $USER
 sudo systemctl enable --now libvirtd.service
 sudo usermod -aG libvirt $(whoami)
 
+# ports for localsend
+sudo ufw allow 53317/tcp
+sudo ufw allow 53317/udp
+
 {{ end }}
