@@ -19,6 +19,8 @@ sudo usermod -aG libvirt $(whoami)
 sudo ufw allow 53317/tcp
 sudo ufw allow 53317/udp
 
+sudo systemctl enable pcscd --now
+
 git config --global user.email "pascal@kraupner.me"
 git config --global user.name "Pascal Kraupner"
 
