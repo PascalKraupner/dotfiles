@@ -1,0 +1,27 @@
+{{- if and (eq .chezmoi.os "linux") (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos")) -}}
+#!/bin/bash
+
+set -e
+
+if ! command -v flatpak &> /dev/null; then
+    echo "Installing flatpak..."
+    sudo pacman -S --needed --noconfirm flatpak
+fi
+
+echo "Adding Flathub repository..."
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpaks=(
+    "org.cryptomator.Cryptomator"
+)
+
+install_flatpaks() {
+    for app in "${flatpaks[@]}"; do
+        echo "Installing $app..."
+        flatpak install -y flathub "$app"
+    done
+}
+
+install_flatpaks
+
+{{ end }}
