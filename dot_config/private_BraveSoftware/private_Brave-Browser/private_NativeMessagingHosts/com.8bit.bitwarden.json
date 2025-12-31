@@ -1,0 +1,7 @@
+{
+  "name": "com.8bit.bitwarden",
+  "description": "Bitwarden desktop <-> browser bridge",
+  "path": "/usr/lib/bitwarden/desktop_proxy",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://nngceckbapebfimnlniiiahkandclblb/"]
+}
