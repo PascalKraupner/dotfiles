@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SSH_HOST="${1:-server01}"
+SOCKS_PORT="${SOCKS_PORT:-1080}"
+URL="${URL:-http://192.168.178.1}"
+
+if ! command -v chromium >/dev/null 2>&1; then
+  echo "Error: chromium not found."
+  exit 1
+fi
+
+# Start SOCKS tunnel in background (bind localhost only)
+ssh -N -D "127.0.0.1:${SOCKS_PORT}" \
+  -o ExitOnForwardFailure=yes \
+  -o ServerAliveInterval=60 \
+  -o ServerAliveCountMax=3 \
+  "${SSH_HOST}" &
+SSH_PID=$!
+
+cleanup() {
+  kill "${SSH_PID}" >/dev/null 2>&1 || true
+}
+trap cleanup EXIT INT TERM
+
+
+chromium --proxy-server="socks5://127.0.0.1:${SOCKS_PORT}" "${URL}" >/dev/null 2>&1 &
+
+echo "Opened: ${URL}"
+echo "Press Ctrl+C to stop the tunnel."
+wait "${SSH_PID}"
+
