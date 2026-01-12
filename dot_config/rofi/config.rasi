@@ -1,0 +1,164 @@
+* {
+    bg:                          #222436;
+    bg-alt:                      #2d3f76;
+    fg:                          #c8d3f5;
+    blue:                        #82a1ff;
+    green:                       #c3e88d;
+    red:                         #ff757f;
+    font:                        "Iosevka Nerd Font 10";
+}
+
+configuration {
+    modi:                        "drun,calc,emoji";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    kb-mode-next:                "Tab";
+    kb-element-next:             "";
+    display-drun:                "󰀻";
+    display-calc:                "";
+    display-emoji:               "󰞅";
+}
+
+window {
+    transparency:                "real";
+    border:                      1px solid;
+    border-radius:               12px;
+    border-color:                var(bg-alt);
+    background-color:            var(bg);
+}
+
+mainbox {
+    spacing:                     20px;
+    padding:                     20px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "message", "listview", "mode-switcher" ];
+}
+
+inputbar {
+    spacing:                     10px;
+    padding:                     10px;
+    border-radius:               12px;
+    background-color:            var(bg-alt);
+    text-color:                  var(fg);
+    children:                    [ "textbox-prompt-colon", "entry" ];
+}
+
+textbox-prompt-colon {
+    expand:                      false;
+    width:                       20px;
+    str:                         "";
+    background-color:            inherit;
+    text-color:                  inherit;
+}
+
+entry {
+    cursor-width:                1px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 " Search...";
+    placeholder-color:           inherit;
+}
+
+listview {
+    border:                      0px solid;
+    columns:                     1;
+    lines:                       12;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   true;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    spacing:                     5px;
+    background-color:            transparent;
+    text-color:                  var(fg);
+    cursor:                      "default";
+}
+
+scrollbar {
+    handle-width:                1px;
+    handle-color:                var(blue);
+    border-radius:               10px;
+    background-color:            var(bg-alt);
+}
+
+element {
+    spacing:                     10px;
+    padding:                     6px;
+    border-radius:               12px;
+    background-color:            transparent;
+    text-color:                  var(fg);
+    cursor:                      pointer;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color:            var(bg);
+    text-color:                  var(fg);
+}
+
+element normal.urgent,
+element alternate.urgent,
+element selected.active {
+    background-color:            var(red);
+    text-color:                  var(bg);
+}
+
+element normal.active,
+element alternate.active,
+element selected.urgent {
+    background-color:            var(green);
+    text-color:                  var(bg);
+}
+
+element selected.normal {
+    background-color:            var(blue);
+    text-color:                  var(bg);
+}
+
+element-icon {
+    size:                        24px;
+}
+
+element-text {
+    vertical-align:              0.5;
+}
+
+mode-switcher {
+    spacing:                     10px;
+    text-color:                  var(fg);
+}
+
+button {
+    padding:                     10px;
+    border-radius:               12px;
+    background-color:            var(bg-alt);
+}
+
+button selected {
+    background-color:            var(red);
+    text-color:                  var(bg);
+}
+
+message {
+    border:                      0px solid;
+    padding:                     10px;
+    border-radius:               12px;
+    background-color:            var(bg-alt);
+    text-color:                  var(fg);
+}
+
+textbox {
+    text-color:                  var(fg);
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    markup:                      true;
+}
+
+error-message {
+    padding:                     20px;
+    background-color:            var(bg);
+    text-color:                  var(fg);
+}
