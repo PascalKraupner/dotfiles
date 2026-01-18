@@ -1,0 +1,48 @@
+#!/bin/bash
+
+focus_or_launch() {
+  local identity="$1"
+  local launch_cmd="$2"
+
+  # Search for window by class or title (case-insensitive)
+  addr=$(hyprctl clients -j | jq -r --arg n "$identity" '
+        .[] | select((.class | test($n; "i")) or (.title | test($n; "i"))) | .address
+    ' | head -n 1)
+
+  if [[ -n "$addr" && "$addr" != "null" ]]; then
+    hyprctl dispatch focuswindow "address:$addr"
+  else
+    setsid bash -c "$launch_cmd" &
+  fi
+}
+
+TYPE=$1
+NAME=$2
+CMD=$3
+MODE=$4
+
+case "$TYPE" in
+tui)
+  if [[ "$MODE" == "float" ]]; then
+    focus_or_launch "$NAME" "ghostty --class=TUI.float --title=$NAME -e $CMD"
+  else
+    focus_or_launch "$NAME" "ghostty --title=$NAME -e $CMD"
+  fi
+  ;;
+app)
+  focus_or_launch "$NAME" "$CMD"
+  ;;
+web)
+  PROFILE_BASE="$HOME/.config/brave-webapps/shared"
+
+  if [[ "$MODE" == "float" ]]; then
+    focus_or_launch "$NAME" "brave --app=$CMD --user-data-dir=$PROFILE_BASE-float --profile-directory='Floating'"
+  else
+    focus_or_launch "$NAME" "brave --app=$CMD --user-data-dir=$PROFILE_BASE"
+  fi
+  ;;
+*)
+  echo "Usage: open [tui|app|web] [name] [cmd/url] [float]"
+  exit 1
+  ;;
+esac
