@@ -1,0 +1,66 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/launcher",
+    "custom/separator",
+    "hyprland/workspaces",
+  ],
+  "modules-center": ["group/clock"],
+  "modules-right": [],
+
+  "custom/launcher": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "~/.local/bin/menu",
+  },
+
+  "custom/separator": {
+    "format": "•",
+    "tooltip": false,
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    },
+    "format-icons": {
+      "active": "",
+      "urgent": "",
+      "default": "",
+      "empty": "",
+    },
+  },
+
+  "group/clock": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "transition-left-to-right": true,
+    },
+    "modules": ["clock#standard", "clock#toronto", "clock#german"],
+  },
+
+  "clock#standard": {
+    "format": "<span color='#ff757f' rise='500'></span><span letter_spacing='4000'> </span>{:%I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "~/.local/bin/focus-launcher web \"Google Calendar\" \"https://calendar.google.com\" float",
+  },
+
+  "clock#german": {
+    "timezone": "Europe/Berlin",
+    "format": "<span rise='1000'></span><span letter_spacing='5000'> </span>{:%I:%M %p}",
+    "tooltip": false,
+  },
+
+  "clock#toronto": {
+    "timezone": "America/Toronto",
+    "format": "<span rise='1000'></span><span letter_spacing='3000'> </span>{:%I:%M %p}",
+    "tooltip": false,
+  },
+}
