@@ -135,11 +135,12 @@ button {
     padding:                     10px;
     border-radius:               12px;
     background-color:            var(bg-alt);
+    text-color:                  var(fg);
 }
 
 button selected {
     background-color:            var(red);
-    text-color:                  var(bg);
+    text-color:                  var(fg);
 }
 
 message {
