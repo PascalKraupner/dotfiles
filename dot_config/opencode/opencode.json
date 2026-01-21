@@ -2,11 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "theme": "tokyonight",
   "mcp": {
-    "tavily": {
-      "type": "remote",
-      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey={file:~/.secrets/tavily_key}",
-      "enabled": true
-    },
     "context7": {
       "type": "remote",
       "url": "https://mcp.context7.com/mcp",
