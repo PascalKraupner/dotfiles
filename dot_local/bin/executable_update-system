@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Function to pause at the end
+finish() {
+  echo -e "\n\e[32m✔ Process Finished.\e[0m"
+  echo "Press any key to close this window..."
+  read -n 1 -s -r </dev/tty
+}
+
+echo -e "\e[34m=> Checking for Arch News...\e[0m"
+paru -Pw || true
+
+echo -e "\n\e[32m=> Starting System Update (paru)...\e[0m"
+paru -Syu --noconfirm
+
+if command -v chezmoi &>/dev/null; then
+  echo -e "\n\e[35m=> Applying Dotfiles (chezmoi)...\e[0m"
+  chezmoi apply
+else
+  echo -e "\n\e[33m=> Chezmoi not found, skipping config sync.\e[0m"
+fi
+
+finish

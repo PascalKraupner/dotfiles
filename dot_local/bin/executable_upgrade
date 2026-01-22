@@ -1,0 +1,2 @@
+#!/bin/bash
+~/.local/bin/focus-launcher tui "SystemUpdate" "~/.local/bin/update-system" float
