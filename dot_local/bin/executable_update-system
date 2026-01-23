@@ -14,8 +14,8 @@ echo -e "\n\e[32m=> Starting System Update (paru)...\e[0m"
 paru -Syu --noconfirm
 
 if command -v chezmoi &>/dev/null; then
-  echo -e "\n\e[35m=> Applying Dotfiles (chezmoi)...\e[0m"
-  chezmoi apply
+  echo -e "\n\e[35m=> Updating Dotfiles (chezmoi)...\e[0m"
+  chezmoi update
 else
   echo -e "\n\e[33m=> Chezmoi not found, skipping config sync.\e[0m"
 fi
