@@ -71,14 +71,17 @@
     "tooltip": false,
   },
   "cpu": {
-    "format": "  {usage}% |",
+    "format": "   {usage}% |",
+    "on-click": "~/.local/bin/focus-launcher tui \"btop\" \"btop\" float",
   },
   "memory": {
     "format": "  {used:0.1f}G/{total:0.1f}G |",
+    "on-click": "~/.local/bin/focus-launcher tui \"btop\" \"btop\" float",
   },
   "disk": {
     "interval": 30,
     "format": "  {percentage_used}%",
     "path": "/",
+    "on-click": "~/.local/bin/focus-launcher tui \"duf\" \"duf --only local --theme dark --sort usage --output mountpoint,size,used,avail,usage\" float",
   },
 }
