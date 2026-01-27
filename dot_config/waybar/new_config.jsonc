@@ -7,6 +7,10 @@
     "custom/launcher",
     "custom/separator",
     "hyprland/workspaces",
+    "custom/separator",
+    "cpu",
+    "memory",
+    "disk",
   ],
   "modules-center": ["group/clock"],
   "modules-right": [],
@@ -47,20 +51,31 @@
   },
 
   "clock#standard": {
-    "format": "<span color='#ff757f' rise='500'></span><span letter_spacing='4000'> </span>{:%I:%M %p}",
+    "format": "<span color='#ff757f' rise='500'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "~/.local/bin/focus-launcher web \"Google Calendar\" \"https://calendar.google.com\" float",
   },
 
   "clock#german": {
     "timezone": "Europe/Berlin",
-    "format": "<span rise='1000'></span><span letter_spacing='5000'> </span>{:%I:%M %p}",
+    "format": "<span rise='1000'></span><span letter_spacing='8000'> </span>{:%I:%M %p}",
     "tooltip": false,
   },
 
   "clock#toronto": {
     "timezone": "America/Toronto",
-    "format": "<span rise='1000'></span><span letter_spacing='3000'> </span>{:%I:%M %p}",
+    "format": "<span rise='1000'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
     "tooltip": false,
+  },
+  "cpu": {
+    "format": "   {usage}%",
+  },
+  "memory": {
+    "format": "  {used:0.1f}G/{total:0.1f}G",
+  },
+  "disk": {
+    "interval": 30,
+    "format": "  {percentage_used}%",
+    "path": "/",
   },
 }
