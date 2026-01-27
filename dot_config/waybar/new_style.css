@@ -18,13 +18,15 @@
 #custom-launcher,
 #workspaces,
 #custom-separator,
-#clock {
+#clock,
+#hardware {
   margin: 6px 0;
 }
 
 #custom-launcher,
 #workspaces,
-#clock {
+#clock,
+#hardware {
   background: @surface;
   border-radius: 15px;
   padding: 0 10px;
@@ -65,4 +67,16 @@
 
 #workspaces button.urgent {
   color: @red;
+}
+
+#hardware {
+  padding: 0 10px;
+  color: @purple;
+}
+
+#cpu,
+#memory,
+#disk {
+  padding: 0 5px;
+  margin: 0;
 }

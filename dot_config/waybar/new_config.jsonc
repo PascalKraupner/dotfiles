@@ -8,9 +8,7 @@
     "custom/separator",
     "hyprland/workspaces",
     "custom/separator",
-    "cpu",
-    "memory",
-    "disk",
+    "group/hardware",
   ],
   "modules-center": ["group/clock"],
   "modules-right": [],
@@ -50,6 +48,11 @@
     "modules": ["clock#standard", "clock#toronto", "clock#german"],
   },
 
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "disk"],
+  },
+
   "clock#standard": {
     "format": "<span color='#ff757f' rise='500'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -68,10 +71,10 @@
     "tooltip": false,
   },
   "cpu": {
-    "format": "   {usage}%",
+    "format": "  {usage}% |",
   },
   "memory": {
-    "format": "  {used:0.1f}G/{total:0.1f}G",
+    "format": "  {used:0.1f}G/{total:0.1f}G |",
   },
   "disk": {
     "interval": 30,
