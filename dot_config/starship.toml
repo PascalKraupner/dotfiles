@@ -1,12 +1,12 @@
 format = """
 $os\
 $username\
-[](bg:peach fg:surface0)\
+[](bg:blue fg:slate)\
 $directory\
-[](fg:peach bg:green)\
+[](fg:blue bg:storm)\
 $git_branch\
 $git_status\
-[](fg:green bg:teal)\
+[](fg:storm bg:night)\
 $c\
 $rust\
 $golang\
@@ -16,47 +16,30 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:teal bg:blue)\
+[](fg:night bg:night)\
 $docker_context\
-[](fg:blue bg:purple)\
+[](fg:night bg:abyss)\
 $time\
-[ ](fg:purple)\
+[ ](fg:abyss)\
 $line_break$character"""
 
-palette = "catppuccin_frappe"
+palette = "tokyo_night"
 
-[palettes.catppuccin_frappe]
-rosewater = "#f2d5cf"
-flamingo = "#eebebe"
-pink = "#f4b8e4"
-mauve = "#ca9ee6"
-red = "#e78284"
-maroon = "#ea999c"
-peach = "#ef9f76"
-yellow = "#e5c890"
-green = "#a6d189"
-teal = "#81c8be"
-sky = "#99d1db"
-sapphire = "#85c1dc"
-blue = "#8caaee"
-lavender = "#babbf1"
-text = "#c6d0f5"
-subtext1 = "#b5bfe2"
-subtext0 = "#a5adce"
-overlay2 = "#949cbb"
-overlay1 = "#838ba7"
-overlay0 = "#737994"
-surface2 = "#626880"
-surface1 = "#51576d"
-surface0 = "#414559"
-base = "#303446"
-mantle = "#292c3c"
-crust = "#232634"
-
+[palettes.tokyo_night]
+slate = "#414868"
+bright = "#c0caf5"
+blue = "#769ff0"
+white = "#e3e5e5"
+storm = "#394260"
+night = "#212736"
+abyss = "#1d2230"
+grey = "#a0a9cb"
+sky = "#769ff0"
+red = "#ff757f"
 
 [os]
 disabled = false
-style = "bg:surface0 fg:text"
+style = "bg:slate fg:bright"
 
 [os.symbols]
 Windows = "󰍲"
@@ -81,12 +64,12 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:surface0 fg:text"
-style_root = "bg:surface0 fg:text"
+style_user = "bg:slate fg:bright"
+style_root = "bg:slate fg:bright"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:mantle bg:peach"
+style = "fg:white bg:blue"
 format = "[ $path ]($style)"
 truncation_length = 2
 truncation_symbol = "…/"
@@ -100,79 +83,79 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+style = "bg:night"
+format = '[[ $symbol $branch ](fg:sky bg:storm)]($style)'
 truncation_length = 20
 truncation_symbol = "…"
 
 [git_status]
-style = "bg:teal"
-format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+style = "bg:night"
+format = '[[($all_status$ahead_behind )](fg:sky bg:storm)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [c]
 symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [php]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [java]
 symbol = " "
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [python]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:mantle"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+style = "bg:night"
+format = '[[ $symbol( $context) ](fg:sky bg:night)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:peach"
-format = '[[ 󰄛 $time ](fg:mantle bg:purple)]($style)'
+style = "bg:blue"
+format = '[[  $time ](fg:grey bg:abyss)]($style)'
 
 [line_break]
-disabled = true
+disabled = false
 
 [character]
 disabled = false
-success_symbol = ''
-error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
+vimcmd_symbol = '[❯](bold blue)'
+vimcmd_replace_one_symbol = '[❯](bold sky)'
+vimcmd_replace_symbol = '[❯](bold sky)'
+vimcmd_visual_symbol = '[❯](bold blue)'
