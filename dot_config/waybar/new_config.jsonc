@@ -1,7 +1,4 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 34,
   "reload_style_on_change": true,
   "modules-left": [
     "custom/launcher",
@@ -12,7 +9,6 @@
   ],
   "modules-center": ["group/clock"],
   "modules-right": [],
-
   "custom/launcher": {
     "format": " ",
     "tooltip": false,
@@ -40,7 +36,7 @@
   },
 
   "group/clock": {
-    "orientation": "inherit",
+    "orientation": "horizontal",
     "drawer": {
       "transition-duration": 500,
       "transition-left-to-right": true,
@@ -80,7 +76,7 @@
   },
   "disk": {
     "interval": 30,
-    "format": "  {percentage_used}%",
+    "format": "  {percentage_used}% ",
     "path": "/",
     "on-click": "~/.local/bin/focus-launcher tui \"duf\" \"duf --only local --theme dark --sort usage --output mountpoint,size,used,avail,usage\" float",
   },

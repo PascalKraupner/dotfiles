@@ -35,7 +35,7 @@
 		"exec-if": "which sway-audio-idle-inhibit",
 		"return-type": "json",
 		"format-icons": {
-			"output": "",
+			"output": " ",
 			"input": "",
 			"output-input": "  ",
 			"none": ""
@@ -64,9 +64,9 @@
     "format": "{icon}",
     "tooltip-format": "Power profile: {profile}",
     "format-icons": {
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
     }
   },
   "clock": {
@@ -93,8 +93,8 @@
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
-        "activated": "",
-        "deactivated": ""
+        "activated": " ",
+        "deactivated": " "
     }
 },
   "pulseaudio": {

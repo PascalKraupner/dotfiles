@@ -1,21 +1,24 @@
-@define-color foreground #cdd6f4;
-@define-color background #1a1b26;
+@import "tokyo-night-moon.css";
 
 * {
-  font-family: "JetBrainsMono Nerd Font Propo";
+  font-family: "Iosevka Nerd Font", sans-serif;
   font-size: 14px;
   min-height: 0;
   font-weight: bold;
 }
 
 #waybar {
-  background: transparent;
+  background: @bg;
+  color: @fg;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1);
   margin: 2px 2px;
 }
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
 
+/* Shared margins and padding for modules */
+#workspaces,
+#power-profiles-daemon,
+#custom-audio_idle_inhibitor,
 #pulseaudio,
 #clock,
 #battery,
@@ -24,55 +27,44 @@
 #tray,
 #network,
 #idle_inhibitor {
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   margin-left: 4px;
   margin-right: 4px;
-  padding-left: 4px;
-  padding-right: 4px;
+  background-color: @surface;
+  padding: 0 10px;
+  border-radius: 15px;
+  color: @fg;
 }
 
-#clock {
+/* Specific Workspaces Styling */
+#workspaces {
+  padding: 0 5px; /* Tighter container padding */
 }
 
-#pulseaudio {
+#workspaces button {
+  padding: 0 5px; /* Smaller button padding */
+  color: @blue;
+  background: transparent;
+  /* border-radius: 15px; Remove if you don't want individual pills */
 }
 
-#network {
+#workspaces button.active {
+  color: @green;
 }
 
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: transparent;
+}
+
+/* Idle Inhibitor Spacing */
 #idle_inhibitor {
   margin-right: 12px;
-}
-
-#idle_inhibitor.activated {
-}
-
-#battery {
-}
-
-#cpu {
-}
-
-#tray,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#cpu,
-#idle_inhibitor,
-#memory {
-  background-color: @background;
-  padding: 0.5rem 1rem;
-  margin: 5px 5px;
-  border-radius: 10px;
-}
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-  margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-  margin-right: 0;
 }

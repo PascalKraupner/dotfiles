@@ -1,7 +1,6 @@
 @import "tokyo-night-moon.css";
 
 * {
-  border: none;
   font-family: "Iosevka Nerd Font", sans-serif;
   font-size: 14px;
   min-height: 0;
@@ -15,25 +14,19 @@
   margin: 2px 2px;
 }
 
-#custom-launcher,
-#workspaces,
-#custom-separator,
-#clock,
-#hardware {
-  margin: 6px 0;
-}
-
-#custom-launcher,
 #workspaces,
 #clock,
-#hardware {
-  background: @surface;
-  border-radius: 15px;
+#hardware,
+#custom-launcher {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
+  background-color: @surface;
   padding: 0 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  border-radius: 15px;
+  color: @fg;
 }
-
 #custom-launcher {
   color: @green;
   margin-left: 10px;
@@ -67,16 +60,4 @@
 
 #workspaces button.urgent {
   color: @red;
-}
-
-#hardware {
-  padding: 0 10px;
-  color: @purple;
-}
-
-#cpu,
-#memory,
-#disk {
-  padding: 0 5px;
-  margin: 0;
 }
