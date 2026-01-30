@@ -37,16 +37,14 @@
   color: @fg;
 }
 
-/* Specific Workspaces Styling */
 #workspaces {
-  padding: 0 5px; /* Tighter container padding */
+  padding: 0 5px;
 }
 
 #workspaces button {
-  padding: 0 5px; /* Smaller button padding */
+  padding: 0 5px;
   color: @blue;
   background: transparent;
-  /* border-radius: 15px; Remove if you don't want individual pills */
 }
 
 #workspaces button.active {
@@ -59,12 +57,12 @@
 }
 
 #workspaces button:hover {
+  border: none;
   box-shadow: inherit;
   text-shadow: inherit;
-  background: transparent;
+  background: none;
 }
 
-/* Idle Inhibitor Spacing */
 #idle_inhibitor {
   margin-right: 12px;
 }

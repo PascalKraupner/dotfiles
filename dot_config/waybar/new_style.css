@@ -14,9 +14,12 @@
   margin: 2px 2px;
 }
 
+#clock-group {
+}
+
 #workspaces,
-#clock,
 #hardware,
+#clock-group,
 #custom-launcher {
   margin-top: 6px;
   margin-bottom: 6px;
