@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Grok
+Comment=Grok AI Assistant
+Exec=/home/pascal/.local/bin/focus-launcher web Grok https://grok.com
+Icon=grok
+Terminal=false
+Categories=Network;Chat;AI;
+StartupNotify=true

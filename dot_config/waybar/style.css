@@ -17,6 +17,7 @@
 
 /* Shared margins and padding for modules */
 #workspaces,
+#submap,
 #power-profiles-daemon,
 #custom-audio_idle_inhibitor,
 #pulseaudio,
@@ -65,4 +66,20 @@
 
 #idle_inhibitor {
   margin-right: 12px;
+}
+
+#submap {
+  background-color: @red;
+  color: @bg;
+  font-weight: bold;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
 }

@@ -20,6 +20,7 @@
 #workspaces,
 #hardware,
 #clock-group,
+#power-profiles-daemon,
 #custom-launcher {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -30,6 +31,7 @@
   border-radius: 15px;
   color: @fg;
 }
+
 #custom-launcher {
   color: @green;
   margin-left: 10px;

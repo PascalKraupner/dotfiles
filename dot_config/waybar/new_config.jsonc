@@ -5,6 +5,7 @@
     "custom/separator",
     "hyprland/workspaces",
     "custom/separator",
+    "power-profiles-daemon",
     "group/hardware",
   ],
   "modules-center": ["group/clock-group"],
@@ -19,19 +20,26 @@
     "format": "•",
     "tooltip": false,
   },
-
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "format-icons": {
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " ",
+    },
+  },
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
-    "all-outputs": true,
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    },
     "format-icons": {
-      "active": "",
-      "urgent": "",
-      "default": "",
-      "empty": "",
+      "browser": " ",
+      "term": " ",
+      "notes": " ",
+      "email": " ",
+      "music": " ",
+      "files": " ",
+      "AI": "󰚩 ",
     },
   },
 
@@ -67,11 +75,13 @@
     "tooltip": false,
   },
   "cpu": {
+    "interval": 5,
     "format": "   {usage}% | ",
     "on-click": "~/.local/bin/focus-launcher tui \"btop\" \"btop\" float",
   },
   "memory": {
-    "format": "  {used:0.1f}G/{total:0.1f}G | ",
+    "interval": 30,
+    "format": "  {percentage}% | ",
     "on-click": "~/.local/bin/focus-launcher tui \"btop\" \"btop\" float",
   },
   "disk": {

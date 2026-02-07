@@ -1,5 +1,5 @@
 {
-    "modules-left": ["hyprland/workspaces", "power-profiles-daemon"],
+    "modules-left": ["hyprland/workspaces", "hyprland/submap", "power-profiles-daemon"],
     "modules-center": [
     "group/clocks", 
     ],
@@ -54,10 +54,16 @@
     "tooltip-format": "{time}"
   },
 "hyprland/workspaces": {
-    "format": "{name} : {icon}",
+    "format": "{icon}",
+    "on-click": "activate",
     "format-icons": {
-      "active": "",
-      "default": ""
+      "browser": " ",
+      "term": " ",
+      "notes": " ",
+      "email": " ",
+      "music": " ",
+      "files": " ",
+      "AI": "󰚩 ",
     }
   },
   "power-profiles-daemon": {
@@ -99,10 +105,15 @@
 },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-muted": "",
+    "format-muted": "",
     "format-icons": {
-        "default": ["", "", " "]
+        "default": ["", "", " "]
     },
     "on-click": "pavucontrol"
+},
+  "hyprland/submap": {
+    "format": " {}",
+    "tooltip": false
+  }
 }
 }
