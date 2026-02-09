@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.hostname "closery-laptop" -}}
+$edp1_config = eDP-1,preferred,auto,1
+$browser = google-chrome-stable
+$ai_provider = Claude
+$ai_url = https://claude.ai
+{{ else -}}
+# No overrides for this machine
+{{ end -}}
