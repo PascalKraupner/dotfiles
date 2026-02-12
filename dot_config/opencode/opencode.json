@@ -14,6 +14,11 @@
       "headers": {
         "CONTEXT7_API_KEY": "{file:~/.secrets/context7_key}"
       }
+    },
+    "tmux-mcp": {
+      "type": "local",
+      "command": ["npx", "-y", "tmux-mcp", "--shell-type=fish"],
+      "enabled": true
     }
   }
 }
