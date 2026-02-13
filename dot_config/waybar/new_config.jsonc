@@ -10,7 +10,7 @@
     "hyprland/submap",
   ],
   "modules-center": ["group/clock-group"],
-  "modules-right": [],
+  "modules-right": ["pulseaudio"],
   "custom/launcher": {
     "format": " ",
     "tooltip": false,
@@ -94,5 +94,15 @@
     "format": "  {percentage_used}% ",
     "path": "/",
     "on-click": "~/.local/bin/focus-launcher tui \"duf\" \"duf --only local --theme dark --sort usage --output mountpoint,size,used,avail,usage\" float",
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "~/.local/bin/focus-launcher tui \"wiremix\" \"wiremix\" float",
+    "on-click-right": "pamixer -t",
+    "tooltip": false,
   },
 }
