@@ -66,3 +66,21 @@
 #workspaces button.urgent {
   color: @red;
 }
+
+#submap {
+  background-color: @red;
+  color: @bg;
+  font-weight: bold;
+  padding: 0 8px;
+  border-radius: 15px;
+  animation: blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}

@@ -7,6 +7,7 @@
     "custom/separator",
     "power-profiles-daemon",
     "group/hardware",
+    "hyprland/submap",
   ],
   "modules-center": ["group/clock-group"],
   "modules-right": [],
@@ -55,6 +56,10 @@
   "group/hardware": {
     "orientation": "horizontal",
     "modules": ["cpu", "memory", "disk"],
+  },
+
+  "hyprland/submap": {
+    "tooltip": false,
   },
 
   "clock#standard": {
