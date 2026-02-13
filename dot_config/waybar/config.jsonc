@@ -6,6 +6,7 @@
     "hyprland/workspaces",
     "custom/separator",
     "power-profiles-daemon",
+    "custom/separator",
     "group/hardware",
     "hyprland/submap",
   ],

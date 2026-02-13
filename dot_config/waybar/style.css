@@ -4,7 +4,6 @@
   font-family: "Iosevka Nerd Font", sans-serif;
   font-size: 14px;
   min-height: 0;
-  font-weight: bold;
 }
 
 #waybar {
@@ -15,19 +14,19 @@
   margin: 2px 2px;
 }
 
-/* Shared margins and padding for modules */
+#clock-group {
+}
+
 #workspaces,
-#submap,
+#hardware,
+#clock-group,
 #power-profiles-daemon,
-#custom-audio_idle_inhibitor,
 #pulseaudio,
-#clock,
+#idle_inhibitor,
 #battery,
-#cpu,
-#memory,
-#tray,
 #network,
-#idle_inhibitor {
+#tray,
+#custom-launcher {
   margin-top: 6px;
   margin-bottom: 6px;
   margin-left: 4px;
@@ -38,40 +37,50 @@
   color: @fg;
 }
 
-#workspaces {
-  padding: 0 5px;
+#custom-launcher {
+  color: @green;
+  margin-left: 10px;
+}
+
+#custom-separator {
+  color: @comment;
+  padding: 0;
 }
 
 #workspaces button {
-  padding: 0 5px;
   color: @blue;
-  background: transparent;
+  padding: 0 6px;
+  border: none;
 }
 
 #workspaces button.active {
   color: @green;
 }
 
+#workspaces button.occupied {
+  color: @blue;
+}
+
 #workspaces button.urgent {
+  color: @red;
+}
+
+#battery.critical {
   background-color: @red;
-  color: @bg;
+  animation: blink 1s ease-in-out infinite alternate;
 }
 
-#workspaces button:hover {
-  border: none;
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: none;
+#idle_inhibitor.activated {
+  color: @red;
 }
 
-#idle_inhibitor {
-  margin-right: 12px;
+#idle_inhibitor.deactivated {
+  color: @green;
 }
 
 #submap {
   background-color: @red;
   color: @bg;
-  font-weight: bold;
   animation: blink 1s ease-in-out infinite alternate;
 }
 
