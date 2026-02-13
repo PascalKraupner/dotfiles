@@ -22,6 +22,7 @@
 #clock-group,
 #power-profiles-daemon,
 #pulseaudio,
+#idle_inhibitor,
 #custom-launcher {
   margin-top: 6px;
   margin-bottom: 6px;
@@ -66,6 +67,14 @@
 
 #workspaces button.urgent {
   color: @red;
+}
+
+#idle_inhibitor.activated {
+  color: @red;
+}
+
+#idle_inhibitor.deactivated {
+  color: @green;
 }
 
 #submap {
