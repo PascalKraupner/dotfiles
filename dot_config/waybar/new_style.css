@@ -50,14 +50,7 @@
 #workspaces button {
   color: @blue;
   padding: 0 6px;
-  transition: all 0.3s ease;
-}
-
-#workspaces button:hover {
-  background: none;
-  box-shadow: none;
   border: none;
-  text-shadow: none;
 }
 
 #workspaces button.active {
