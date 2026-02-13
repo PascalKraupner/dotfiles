@@ -10,7 +10,7 @@
     "hyprland/submap",
   ],
   "modules-center": ["group/clock-group"],
-  "modules-right": ["idle_inhibitor", "pulseaudio", "tray"],
+  "modules-right": ["idle_inhibitor", "pulseaudio", "battery", "tray"],
   "custom/launcher": {
     "format": " ",
     "tooltip": false,
@@ -94,6 +94,21 @@
     "format": "  {percentage_used}% ",
     "path": "/",
     "on-click": "~/.local/bin/focus-launcher tui \"duf\" \"duf --only local --theme dark --sort usage --output mountpoint,size,used,avail,usage\" float",
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-full": "  {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{time}",
   },
   "tray": {
     "spacing": 5,

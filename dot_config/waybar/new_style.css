@@ -23,6 +23,7 @@
 #power-profiles-daemon,
 #pulseaudio,
 #idle_inhibitor,
+#battery,
 #tray,
 #custom-launcher {
   margin-top: 6px;
@@ -68,6 +69,11 @@
 
 #workspaces button.urgent {
   color: @red;
+}
+
+#battery.critical {
+  background-color: @red;
+  animation: blink 1s ease-in-out infinite alternate;
 }
 
 #idle_inhibitor.activated {
