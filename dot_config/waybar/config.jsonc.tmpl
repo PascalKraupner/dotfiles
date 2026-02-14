@@ -71,7 +71,11 @@
   "clock#standard": {
     "format": "<span color='#ff757f' rise='500'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+{{ if eq .chezmoi.hostname .hostnames.work -}}
+    "on-click": "~/.local/bin/focus-launcher web \"Outlook Calendar\" \"https://outlook.office.com/calendar\" float",
+{{ else -}}
     "on-click": "~/.local/bin/focus-launcher web \"Google Calendar\" \"https://calendar.google.com\" float",
+{{ end -}}
   },
 
   "clock#german": {

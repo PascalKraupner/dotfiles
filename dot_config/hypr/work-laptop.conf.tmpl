@@ -1,6 +1,7 @@
-{{ if eq .chezmoi.hostname "closery-laptop" -}}
+{{ if eq .chezmoi.hostname .hostnames.work -}}
 $edp1_config = eDP-1,preferred,auto,1
 $browser = google-chrome-stable
+$mail = thunderbird
 {{ else -}}
 # No overrides for this machine
 {{ end -}}

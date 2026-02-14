@@ -1,0 +1,10 @@
+exec-once = sway-audio-idle-inhibit
+exec-once = waybar & hyprpaper & hypridle & mako
+exec-once = swayosd-server
+exec-once = systemctl --user start hyprpolkitagent
+
+{{ if eq .chezmoi.hostname .hostnames.work -}}
+exec-once = enpass
+{{ else -}}
+exec-once = bitwarden-desktop
+{{ end -}}
