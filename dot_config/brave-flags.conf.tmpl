@@ -1,3 +1,8 @@
+{{ if eq .chezmoi.hostname .hostnames.work -}}
+--enable-features=UseOzonePlatform
+--ozone-platform=wayland
+--ignore-gpu-blocklist
+{{ else -}}
 --enable-features=UseOzonePlatform
 --ozone-platform=wayland
 --use-gl=angle
@@ -6,3 +11,4 @@
 --enable-features=VaapiVideoEncoder,VaapiVideoDecoder,CanvasOopRasterization,VaapiIgnoreDriverChecks,VaapiVideoDecodeLinuxGL,AcceleratedVideoEncoder,VaapiOnNvidiaGPUs,Vulkan,DefaultANGLEVulkan,VulkanFromANGLE
 # Workaround from https://issues.chromium.org/issues/331796411
 --disable-gpu-memory-buffer-video-frames
+{{ end -}}
