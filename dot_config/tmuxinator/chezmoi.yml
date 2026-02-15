@@ -1,0 +1,16 @@
+name: chezmoi
+root: ~/.local/share/chezmoi
+
+windows:
+  - editor:
+      panes:
+        - nvim
+  - opencode:
+      panes:
+        - opencode
+  - lazygit:
+      panes:
+        - lazygit
+  - shell:
+      panes:
+        - ""

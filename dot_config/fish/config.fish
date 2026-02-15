@@ -41,3 +41,25 @@ end
 if test "$fish_key_bindings" = fish_vi_key_bindings
     bind -M default p clipboard-paste
 end
+
+function mux -d "Start or attach to a tmuxinator session"
+    if test (count $argv) -eq 0
+        tmuxinator list
+        return
+    end
+    set -l project $argv[1]
+    tmuxinator start $project
+end
+
+function muxn -d "Start a new numbered tmuxinator session"
+    if test (count $argv) -eq 0
+        echo "Usage: muxn <project>"
+        return 1
+    end
+    set -l project $argv[1]
+    set -l count 2
+    while tmux has-session -t "$project-$count" 2>/dev/null
+        set count (math $count + 1)
+    end
+    tmuxinator start $project -n "$project-$count"
+end
