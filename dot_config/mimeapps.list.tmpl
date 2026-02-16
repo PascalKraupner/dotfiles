@@ -1,0 +1,82 @@
+{{- $browser := "brave-browser.desktop" -}}
+{{- if eq .chezmoi.hostname .hostnames.work -}}
+{{-   $browser = "google-chrome.desktop" -}}
+{{- end -}}
+[Default Applications]
+
+# Browser
+x-scheme-handler/http={{ $browser }}
+x-scheme-handler/https={{ $browser }}
+x-scheme-handler/about={{ $browser }}
+x-scheme-handler/unknown={{ $browser }}
+x-scheme-handler/chrome={{ $browser }}
+text/html={{ $browser }}
+application/x-extension-htm={{ $browser }}
+application/x-extension-html={{ $browser }}
+application/x-extension-shtml={{ $browser }}
+application/xhtml+xml={{ $browser }}
+application/x-extension-xhtml={{ $browser }}
+application/x-extension-xht={{ $browser }}
+
+# Images - Loupe
+image/png=org.gnome.Loupe.desktop
+image/jpeg=org.gnome.Loupe.desktop
+image/gif=org.gnome.Loupe.desktop
+image/webp=org.gnome.Loupe.desktop
+image/svg+xml=org.gnome.Loupe.desktop
+image/bmp=org.gnome.Loupe.desktop
+image/tiff=org.gnome.Loupe.desktop
+image/x-icon=org.gnome.Loupe.desktop
+image/avif=org.gnome.Loupe.desktop
+image/heif=org.gnome.Loupe.desktop
+
+# PDF - Evince
+application/pdf=org.gnome.Evince.desktop
+
+# Video - mpv
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+video/x-msvideo=mpv.desktop
+video/quicktime=mpv.desktop
+video/x-flv=mpv.desktop
+video/ogg=mpv.desktop
+video/3gpp=mpv.desktop
+
+# Audio - mpv
+audio/mpeg=mpv.desktop
+audio/flac=mpv.desktop
+audio/ogg=mpv.desktop
+audio/x-wav=mpv.desktop
+audio/aac=mpv.desktop
+audio/mp4=mpv.desktop
+audio/x-vorbis+ogg=mpv.desktop
+audio/opus=mpv.desktop
+
+# Archives - File Roller
+application/zip=org.gnome.FileRoller.desktop
+application/x-tar=org.gnome.FileRoller.desktop
+application/x-compressed-tar=org.gnome.FileRoller.desktop
+application/gzip=org.gnome.FileRoller.desktop
+application/x-bzip2=org.gnome.FileRoller.desktop
+application/x-xz=org.gnome.FileRoller.desktop
+application/x-7z-compressed=org.gnome.FileRoller.desktop
+application/vnd.rar=org.gnome.FileRoller.desktop
+application/x-xz-compressed-tar=org.gnome.FileRoller.desktop
+application/zstd=org.gnome.FileRoller.desktop
+application/x-zstd-compressed-tar=org.gnome.FileRoller.desktop
+
+# Text/Code - nvim
+text/plain=nvim.desktop
+application/json=nvim.desktop
+application/x-shellscript=nvim.desktop
+text/x-python=nvim.desktop
+text/x-csrc=nvim.desktop
+text/x-chdr=nvim.desktop
+text/xml=nvim.desktop
+
+# Encrypted volumes - ZuluCrypt
+application/octet-stream=zuluCrypt.desktop
+
+# Bitwarden
+x-scheme-handler/bitwarden=bitwarden.desktop
