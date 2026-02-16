@@ -1,0 +1,7 @@
+name: docker
+root: ~/
+
+windows:
+  - lazydocker:
+      panes:
+        - lazydocker
