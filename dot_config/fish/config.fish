@@ -63,3 +63,27 @@ function muxn -d "Start a new numbered tmuxinator session"
     end
     tmuxinator start $project -n "$project-$count"
 end
+
+abbr -a g git
+abbr -a gs git status
+abbr -a ga git add
+abbr -a gc git commit
+abbr -a gca git commit --amend
+abbr -a gp git push
+abbr -a gpl git pull
+abbr -a gb git branch
+abbr -a gd git diff
+abbr -a gl git log
+abbr -a gst git stash
+abbr -a gstp git stash pop
+
+abbr -a gsw git switch
+abbr -a gswc git switch -c
+abbr -a grs git restore
+abbr -a grss git restore --staged
+
+abbr -a gwt git worktree
+abbr -a gwta git worktree add
+abbr -a gwtl git worktree list
+abbr -a gwtr git worktree remove
+abbr -a gwtm git worktree move
