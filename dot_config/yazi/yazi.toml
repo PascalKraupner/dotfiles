@@ -1,0 +1,13 @@
+[mgr]
+show_hidden = false
+show_symlink = true
+sort_by = "natural"
+sort_dir_first = true
+
+[plugin]
+prepend_preloaders = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+]
+prepend_previewers = [
+  { mime = "{audio,video,image}/*", run = "mediainfo" },
+]

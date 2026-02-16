@@ -1,3 +1,7 @@
 [flavor]
 dark  = "tokyonight-moon"
 light = "tokyonight-moon"
+
+[spot]
+title   = { fg = "green" }
+tbl_col = { fg = "blue" }

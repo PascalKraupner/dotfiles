@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+# Hash: {{ include "dot_config/yazi/package.toml" | sha256sum }}
+
 if command -v ya &>/dev/null; then
   echo "[*] Installing yazi packages..."
   ya pkg install
