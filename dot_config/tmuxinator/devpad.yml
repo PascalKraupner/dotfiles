@@ -1,0 +1,25 @@
+name: devpad
+root: ~/
+
+startup_window: editor
+
+on_project_start: tmux set-option -g main-pane-height 80%
+
+windows:
+  - editor:
+      layout: main-horizontal
+      panes:
+        - nvim
+        - ""
+
+  - ai:
+      panes:
+        - opencode
+
+  - lazygit:
+      panes:
+        - lazygit
+
+  - shell:
+      panes:
+        - ""
