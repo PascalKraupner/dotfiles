@@ -64,6 +64,8 @@ function muxn -d "Start a new numbered tmuxinator session"
     tmuxinator start $project -n "$project-$count"
 end
 
+abbr -a j just
+
 abbr -a g git
 abbr -a gs git status
 abbr -a ga git add
