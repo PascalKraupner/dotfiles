@@ -1,45 +1,64 @@
 {{- if and (eq .chezmoi.os "linux") (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos")) -}}
 #!/bin/bash
 set -e
-appimage_urls=(
-    "https://github.com/Dygmalab/Bazecor/releases/download/v1.7.0/Bazecor-1.7.0-x64.AppImage"
+
+# List of GitHub repos to install as AppImages (owner/repo format)
+# The latest x86_64 AppImage release will be resolved automatically
+github_appimages=(
+    "Dygmalab/Bazecor"
 )
 
-# Create a temporary directory for downloading AppImages
-temp_dir=$(mktemp -d -t appimages-XXXXXX)
-echo "Temporary directory created at: $temp_dir"
+INSTALL_DIR="$HOME/Applications"
+mkdir -p "$INSTALL_DIR"
 
-# Function to download and integrate AppImages
-download_and_integrate_appimages() {
-    for url in "${appimage_urls[@]}"; do
-        echo "Downloading AppImage from $url..."
-        wget -P "$temp_dir" "$url"
-        if [ $? -ne 0 ]; then
-            echo "Failed to download $url"
-            continue
-        fi
-        
-        # Extract the filename from the URL
-        filename=$(basename "$url")
-        
-        # Make the AppImage executable
-        chmod +x "$temp_dir/$filename"
-        
-        # Use ail-cli to integrate the AppImage
-        echo "Integrating $filename..."
-        ail-cli integrate "$temp_dir/$filename"
-        if [ $? -ne 0 ]; then
-            echo "Failed to integrate $filename"
-        else
-            echo "$filename integrated successfully."
-        fi
-    done
+install_or_update_appimage() {
+    local repo="$1"
+    local app_name
+    app_name=$(basename "$repo")
+
+    echo "[*] Resolving latest AppImage for $repo..."
+
+    # Get latest release download URL for x86_64 AppImage
+    local url
+    url=$(curl -s "https://api.github.com/repos/$repo/releases/latest" \
+        | jq -r '.assets[] | select(.name | test("x86_64|x64"; "i")) | select(.name | endswith(".AppImage")) | .browser_download_url' \
+        | head -1)
+
+    if [ -z "$url" ]; then
+        echo "[!] Could not resolve AppImage URL for $repo, skipping."
+        return
+    fi
+
+    local filename
+    filename=$(basename "$url")
+    local dest="$INSTALL_DIR/$filename"
+
+    # Check if this exact version is already installed
+    if app-manager --is-installed "$dest" 2>/dev/null | grep -q "installed"; then
+        echo "[✔] $filename already installed — skipping."
+        return
+    fi
+
+    # Uninstall any older version of this app
+    local old_file
+    old_file=$(find "$INSTALL_DIR" -maxdepth 1 -name "${app_name}*.AppImage" -o -name "${app_name}" 2>/dev/null | head -1)
+    if [ -n "$old_file" ]; then
+        echo "[*] Uninstalling old version: $old_file"
+        app-manager uninstall "$old_file" 2>/dev/null || true
+        rm -f "$old_file"
+    fi
+
+    echo "[*] Downloading $filename..."
+    wget -O "$dest" "$url"
+    chmod +x "$dest"
+
+    echo "[*] Installing $filename..."
+    app-manager install "$dest"
+    echo "[✔] $filename installed."
 }
 
-download_and_integrate_appimages
-
-# Clean up: Delete the temporary directory and its contents
-rm -rf "$temp_dir"
-echo "Temporary files cleaned up."
+for repo in "${github_appimages[@]}"; do
+    install_or_update_appimage "$repo"
+done
 
 {{ end }}

@@ -1,0 +1,25 @@
+{{- if and (eq .chezmoi.os "linux") (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos")) -}}
+#!/bin/bash
+set -e
+
+INSTALL_DIR="$HOME/Applications"
+APPMANAGER_URL="https://github.com/kem-a/AppManager/releases/download/v3.2.1/AppManager-3.2.1-anylinux-x86_64.AppImage"
+APPMANAGER_DEST="$INSTALL_DIR/AppManager.AppImage"
+
+mkdir -p "$INSTALL_DIR"
+
+if command -v app-manager &>/dev/null; then
+  echo "[✔] app-manager already installed — skipping."
+  exit 0
+fi
+
+echo "[*] Downloading AppManager..."
+wget -O "$APPMANAGER_DEST" "$APPMANAGER_URL"
+chmod +x "$APPMANAGER_DEST"
+
+echo "[*] Installing AppManager (self-install)..."
+"$APPMANAGER_DEST" install "$APPMANAGER_DEST"
+
+echo "[✔] AppManager installed."
+
+{{ end }}
