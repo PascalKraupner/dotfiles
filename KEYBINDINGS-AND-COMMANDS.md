@@ -12,6 +12,8 @@
 | `mux`            | Lists all tmuxinator projects                                 |
 | `mux <project>`  | Start or attach to a tmuxinator project (e.g. `mux chezmoi`)  |
 | `muxn <project>` | Start a new numbered instance (e.g. `chezmoi-2`, `chezmoi-3`) |
+| `chrome-dev [url]` | Launch Chrome with remote debugging on port 9222             |
+| `brave-dev [url]`  | Launch Brave with remote debugging on port 9222              |
 
 ### Git Abbreviations
 

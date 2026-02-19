@@ -42,6 +42,14 @@ if test "$fish_key_bindings" = fish_vi_key_bindings
     bind -M default p clipboard-paste
 end
 
+function chrome-dev -d "Launch Chrome with remote debugging on port 9222"
+    google-chrome-stable --remote-debugging-port=9222 --user-data-dir=/tmp/chrome-dev-profile $argv
+end
+
+function brave-dev -d "Launch Brave with remote debugging on port 9222"
+    brave --remote-debugging-port=9222 --user-data-dir=/tmp/brave-dev-profile $argv
+end
+
 function mux -d "Start or attach to a tmuxinator session"
     if test (count $argv) -eq 0
         tmuxinator list
