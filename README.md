@@ -58,11 +58,26 @@ sudo timeshift-launcher
 
 ---
 
-### 5. Apply Public Dotfiles
+### 5. Restore Age Key for Secrets
+
+API keys (tavily, context7, etc.) are stored encrypted in the repo using [age](https://age-encryption.org/).
+
+```bash
+# Retrieve the key from and place it:
+mkdir -p ~/.config/chezmoi
+"chezmoi-age-key" > ~/.config/chezmoi/key.txt
+chmod 600 ~/.config/chezmoi/key.txt
+```
+
+---
+
+### 6. Apply Dotfiles
 
 ```bash
 chezmoi init yourusername --apply
 ```
+
+This will decrypt and restore `~/.secrets/tavily_key`, `~/.secrets/context7_key`, and all other managed files.
 
 ---
 
