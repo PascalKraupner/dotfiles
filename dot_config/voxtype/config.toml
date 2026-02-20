@@ -31,7 +31,7 @@ post_output_command = "hyprctl dispatch submap reset"
 [output.notification]
 on_recording_start = false
 on_recording_stop = false
-on_transcription = true
+on_transcription = false
 
 [text]
 # Say "Punkt" / "period", "Komma" / "comma", "Ausrufezeichen" / "exclamation mark" etc.

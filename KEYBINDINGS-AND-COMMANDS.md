@@ -71,6 +71,12 @@ Open the fuzzy session manager with `Prefix + o`. Type to filter existing sessio
 | `SUPER + SHIFT + V` | Toggle mode: press once to start, press again to stop |
 | `F12` or `Escape`   | Cancel recording (while in recording submap)          |
 
+## LazyGit
+
+| Key | Context  | Action                                                      |
+| --- | -------- | ----------------------------------------------------------- |
+| `W` | Anywhere | Diff options → "Enter ref to diff against" → type `main`   |
+
 ## Yazi File Manager
 
 | Key         | Action                          |
