@@ -1,4 +1,4 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --line-numbers --syntax-theme="OneHalfDark" --pager "cat"
+  pagers:
+    - colorArg: always
+      pager: delta --line-numbers --syntax-theme="OneHalfDark" --pager "cat"
