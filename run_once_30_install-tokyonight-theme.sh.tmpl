@@ -1,0 +1,25 @@
+{{- if and (eq .chezmoi.os "linux") (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos")) -}}
+#!/bin/bash
+set -e
+
+echo "[*] Installing Tokyo Night GTK theme (Night, dark variant)..."
+
+TMPDIR=$(mktemp -d)
+trap "rm -rf '$TMPDIR'" EXIT
+
+git clone --depth=1 https://github.com/Fausto-Korpsvart/Tokyonight-GTK-Theme.git "$TMPDIR/tokyonight"
+
+cd "$TMPDIR/tokyonight/themes"
+
+# Install dark variant only, link gtk-4.0 for libadwaita apps
+# No --tweaks = Night color scheme (the default)
+bash install.sh -c dark -l
+
+echo "[✔] Tokyo Night GTK theme installed to ~/.themes/Tokyonight-Dark"
+echo "[✔] gtk-4.0 symlinks created in ~/.config/gtk-4.0 for libadwaita apps"
+
+echo "[*] Recoloring Papirus-Dark folder icons to Tokyo Night nordic blue..."
+papirus-folders -C nordic -t Papirus-Dark
+echo "[✔] Papirus-Dark folders recolored"
+
+{{ end }}
