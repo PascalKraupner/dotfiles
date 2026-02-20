@@ -71,15 +71,6 @@ Open the fuzzy session manager with `Prefix + o`. Type to filter existing sessio
 | `SUPER + SHIFT + V` | Toggle mode: press once to start, press again to stop |
 | `F12` or `Escape`   | Cancel recording (while in recording submap)          |
 
-## SDDM Session Management
-
-| Command                 | Action                                                                   |
-| ----------------------- | ------------------------------------------------------------------------ |
-| `switch-session <name>` | Set SDDM autologin session (e.g. `hyprland`, `plasma`, `gnome`)          |
-| `switch-session`        | Remove autologin block — SDDM will show the session picker on next login |
-
-The config is written to `/etc/sddm.conf.d/autologin.conf` and takes effect on the next login.
-
 ## Yazi File Manager
 
 | Key         | Action                          |
