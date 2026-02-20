@@ -1,10 +1,10 @@
 * {
-    bg:                          #222436;
-    bg-alt:                      #2d3f76;
-    fg:                          #c8d3f5;
-    blue:                        #82a1ff;
-    green:                       #c3e88d;
-    red:                         #ff757f;
+    bg:                          #1a1b26;
+    bg-alt:                      #283457;
+    fg:                          #c0caf5;
+    blue:                        #7aa2f7;
+    green:                       #9ece6a;
+    red:                         #f7768e;
     font:                        "Iosevka Nerd Font 10";
 }
 

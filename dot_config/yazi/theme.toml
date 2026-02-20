@@ -1,6 +1,6 @@
 [flavor]
-dark  = "tokyonight-moon"
-light = "tokyonight-moon"
+dark  = "tokyonight-night"
+light = "tokyonight-night"
 
 [spot]
 title   = { fg = "green" }
