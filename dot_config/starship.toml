@@ -1,12 +1,9 @@
 format = """
 $os\
 $username\
-[](bg:blue fg:slate)\
 $directory\
-[](fg:blue bg:storm)\
 $git_branch\
 $git_status\
-[](fg:storm bg:night)\
 $c\
 $rust\
 $golang\
@@ -16,11 +13,8 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:night bg:night)\
 $docker_context\
-[](fg:night bg:abyss)\
 $time\
-[ ](fg:abyss)\
 $line_break$character"""
 
 palette = "tokyo_night"
@@ -39,114 +33,115 @@ red = "#f7768e"
 
 [os]
 disabled = false
-style = "bg:slate fg:bright"
+style = "fg:bright"
 
 [os.symbols]
-Windows = "󰍲"
-Ubuntu = "󰕈"
-SUSE = ""
-Raspbian = "󰐿"
-Mint = "󰣭"
-Macos = ""
-Manjaro = ""
-Linux = "󰌽"
-Gentoo = "󰣨"
-Fedora = "󰣛"
-Alpine = ""
-Amazon = ""
-Android = ""
-Arch = "󰣇"
-Artix = "󰣇"
-CentOS = ""
-Debian = "󰣚"
-Redhat = "󱄛"
-RedHatEnterprise = "󱄛"
+Windows = "󰍲 "
+Ubuntu = "󰕈 "
+SUSE = " "
+Raspbian = "󰐿 "
+Mint = "󰣭 "
+Macos = " "
+Manjaro = " "
+Linux = "󰌽 "
+Gentoo = "󰣨 "
+Fedora = "󰣛 "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = "󰣇 "
+Artix = "󰣇 "
+CentOS = " "
+Debian = "󰣚 "
+Redhat = "󱄛 "
+RedHatEnterprise = "󱄛 "
 
 [username]
 show_always = true
-style_user = "bg:slate fg:bright"
-style_root = "bg:slate fg:bright"
-format = '[ $user ]($style)'
+style_user = "fg:bright"
+style_root = "fg:red"
+format = '[$user]($style) '
 
 [directory]
-style = "fg:white bg:blue"
-format = "[ $path ]($style)"
+style = "fg:blue bold"
+format = 'in [$path]($style) '
 truncation_length = 2
 truncation_symbol = "../"
+read_only = " 󰌾"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
-"Downloads" = " "
+"Downloads" = " "
 "Music" = "󰝚 "
-"Pictures" = " "
+"Pictures" = " "
 "Development" = "󰲋 "
 
 [git_branch]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol $branch ](fg:sky bg:storm)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'on [$symbol$branch]($style) '
 truncation_length = 20
 truncation_symbol = "…"
 
 [git_status]
-style = "bg:night"
-format = '[[($all_status$ahead_behind )](fg:sky bg:storm)]($style)'
+style = "fg:red"
+format = '[$all_status$ahead_behind]($style) '
 
 [nodejs]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [c]
 symbol = " "
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [rust]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = "󱘗 "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [golang]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [php]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [java]
 symbol = " "
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [kotlin]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [haskell]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [python]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $version) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol($version)]($style) '
 
 [docker_context]
-symbol = ""
-style = "bg:night"
-format = '[[ $symbol( $context) ](fg:sky bg:night)]($style)'
+symbol = " "
+style = "fg:sky"
+format = 'via [$symbol$context]($style) '
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:blue"
-format = '[[  $time ](fg:grey bg:abyss)]($style)'
+style = "fg:grey"
+format = 'at [$time]($style) '
 
 [line_break]
 disabled = false
