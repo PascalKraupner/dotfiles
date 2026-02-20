@@ -31,7 +31,7 @@ function v
 end
 
 function ls
-    eza $argv
+    eza --icons $argv
 end
 
 function clipboard-paste

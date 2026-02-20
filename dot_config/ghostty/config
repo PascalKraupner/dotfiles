@@ -2,10 +2,9 @@ theme = TokyoNight
 background-opacity = 0.7
 background-blur = true
 
-# Font: Iosevka Nerd Font (NOT Mono – Mono variant disables ligatures)
 font-family = Iosevka Nerd Font
 font-size = 13
-# Enable OpenType ligatures (calt = contextual alternates, liga = standard ligatures)
+# Enable ligatures
 font-feature = +calt
 font-feature = +liga
 font-feature = +dlig

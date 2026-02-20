@@ -72,7 +72,7 @@ format = '[ $user ]($style)'
 style = "fg:white bg:blue"
 format = "[ $path ]($style)"
 truncation_length = 2
-truncation_symbol = "…/"
+truncation_symbol = "../"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
