@@ -21,6 +21,7 @@ context_window_optimization = true
 mode = "type"
 fallback_to_clipboard = true
 type_delay_ms = 5
+driver_order = ["dotool", "wtype"]
 # Hyprland compositor integration
 # Prevents SUPER+key shortcuts from firing while voxtype is typing output
 pre_recording_command = "hyprctl dispatch submap Voxtype"

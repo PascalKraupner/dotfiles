@@ -1,0 +1,5 @@
+[Service]
+Environment="DOTOOL_XKB_LAYOUT=eu"
+{{- if eq .chezmoi.hostname .hostnames.work }}
+Environment="VOXTYPE_VULKAN_DEVICE=nvidia"
+{{- end }}

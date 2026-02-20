@@ -11,6 +11,7 @@ sudo systemctl enable --now docker.service
 sudo systemctl enable --now tailscaled.service
 systemctl --user enable --now gnome-keyring-daemon.socket
 sudo usermod -a -G docker $USER
+sudo usermod -aG input $USER
 
 sudo systemctl enable --now libvirtd.service
 sudo usermod -aG libvirt $(whoami)
