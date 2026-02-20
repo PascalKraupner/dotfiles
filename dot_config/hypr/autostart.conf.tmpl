@@ -7,6 +7,7 @@ exec-once = systemctl --user start voxtype
 
 {{ if eq .chezmoi.hostname .hostnames.work -}}
 exec-once = enpass
+exec-once = slack
 {{ else -}}
 exec-once = bitwarden-desktop
 {{ end -}}

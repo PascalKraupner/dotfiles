@@ -1,0 +1,21 @@
+{{- if and (eq .chezmoi.os "linux") (or (eq .chezmoi.osRelease.id "arch") (eq .chezmoi.osRelease.id "cachyos")) -}}
+#!/bin/bash
+set -e
+echo "[*] Configuring SDDM autologin..."
+
+# Remove any [Autologin] block from the main sddm.conf to avoid conflicts with conf.d
+if grep -q '^\[Autologin\]' /etc/sddm.conf 2>/dev/null; then
+  echo "[*] Removing conflicting [Autologin] block from /etc/sddm.conf..."
+  sudo sed -i '/^\[Autologin\]/,/^\[/{/^\[Autologin\]/d;/^\[/!d}' /etc/sddm.conf
+  sudo sed -i '/^$/d' /etc/sddm.conf
+fi
+
+sudo mkdir -p /etc/sddm.conf.d
+sudo tee /etc/sddm.conf.d/autologin.conf > /dev/null << 'EOF'
+[Autologin]
+User={{ .chezmoi.username }}
+Session=hyprland
+EOF
+
+echo "[*] SDDM autologin configured for {{ .chezmoi.username }} with session: hyprland"
+{{ end -}}
