@@ -1,0 +1,41 @@
+state_file = "auto"
+
+[hotkey]
+# Disabled: Hyprland native keybindings are used instead
+# (bind/bindr in hyprland.conf for push-to-talk and toggle)
+enabled = false
+
+[audio]
+device = "default"
+sample_rate = 16000
+max_duration_secs = 60
+
+[whisper]
+mode = "local"
+model = "large-v3-turbo"
+language = "auto"
+translate = false
+context_window_optimization = true
+
+[output]
+mode = "type"
+fallback_to_clipboard = true
+type_delay_ms = 5
+# Hyprland compositor integration
+# Prevents SUPER+key shortcuts from firing while voxtype is typing output
+pre_recording_command = "hyprctl dispatch submap Voxtype"
+pre_output_command = "hyprctl dispatch submap voxtype_suppress"
+post_output_command = "hyprctl dispatch submap reset"
+
+[output.notification]
+on_recording_start = false
+on_recording_stop = false
+on_transcription = true
+
+[text]
+# Say "Punkt" / "period", "Komma" / "comma", "Ausrufezeichen" / "exclamation mark" etc.
+spoken_punctuation = true
+
+[status]
+# Nerd Font icons to match the existing Iosevka Nerd Font setup
+icon_theme = "nerd-font"

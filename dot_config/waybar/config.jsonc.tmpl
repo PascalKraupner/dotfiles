@@ -12,6 +12,7 @@
   "modules-right": [
     "power-profiles-daemon",
     "idle_inhibitor",
+    "custom/voxtype",
     "pulseaudio",
     "network",
     "battery",
@@ -143,6 +144,15 @@
     },
     "tooltip": false,
   },
+  "custom/voxtype": {
+    "exec": "voxtype status --follow --format json --icon-theme nerd-font",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "on-click": "voxtype record toggle",
+    "on-right-click": "voxtype record stop",
+  },
+
   "pulseaudio": {
     "format": "{icon}  {volume}%",
     "format-muted": "󰝟",

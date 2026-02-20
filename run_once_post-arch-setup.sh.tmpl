@@ -24,4 +24,16 @@ sudo systemctl enable pcscd --now
 git config --global user.email "pascal@kraupner.me"
 git config --global user.name "Pascal Kraupner"
 
+# voxtype: download whisper medium model and enable Vulkan GPU acceleration
+if command -v voxtype &> /dev/null; then
+  echo "[*] voxtype: downloading whisper medium model..."
+  voxtype setup --download
+  echo "[*] voxtype: enabling Vulkan GPU acceleration..."
+  voxtype setup systemd
+  systemctl --user enable voxtype
+  sudo voxtype setup gpu --enable || echo "[!] voxtype GPU setup failed - CPU fallback will be used"
+else
+  echo "[!] voxtype not found - skipping model download"
+fi
+
 {{ end }}
