@@ -21,13 +21,17 @@ sudo ufw allow 53317/udp
 
 sudo systemctl enable pcscd --now
 
+{{ if eq .chezmoi.hostname .hostnames.work -}}
+git config --global user.email "pascal.kraupner@closery.com"
+{{ else -}}
 git config --global user.email "pascal@kraupner.me"
+{{ end -}}
 git config --global user.name "Pascal Kraupner"
 
-# voxtype: download whisper medium model and enable Vulkan GPU acceleration
+# voxtype: download whisper model and enable Vulkan GPU acceleration
 if command -v voxtype &> /dev/null; then
-  echo "[*] voxtype: downloading whisper medium model..."
-  voxtype setup --download
+  echo "[*] voxtype: downloading whisper large-v3-turbo model..."
+  voxtype setup --download --model large-v3-turbo
   echo "[*] voxtype: enabling Vulkan GPU acceleration..."
   voxtype setup systemd
   systemctl --user enable voxtype
