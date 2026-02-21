@@ -5,9 +5,9 @@ windows:
   - editor:
       panes:
         - nvim
-  - opencode:
+  - ai:
       panes:
-        - opencode
+        - ai
   - lazygit:
       panes:
         - lazygit
