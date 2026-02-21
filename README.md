@@ -75,4 +75,26 @@ chezmoi init yourusername --apply
 
 ---
 
+---
+
+## 🎵 spotify-player
+
+TUI Spotify client installed as `spotify-player-feats-git` (all features enabled).
+
+### Cover Art
+
+Set `cover_img_pixels = 512` in `~/.config/spotify-player/app.toml` for good image quality. The workspace launches ghostty with `TERM=xterm-ghostty` so viuer uses the kitty graphics protocol.
+
+### Theme
+
+A Tokyo Night theme is in `~/.config/spotify-player/theme.toml`.
+
+Press `T` inside the app to open the theme switcher and select **tokyo-night**, or set it permanently in `app.toml`:
+
+```toml
+theme = "tokyo-night"
+```
+
+---
+
 REMOVE README-CHEZMOI ALSO FROM .chezmoignore
