@@ -14,7 +14,7 @@ windows:
 
   - ai:
       panes:
-        - ai
+        - claude
 
   - lazygit:
       panes:

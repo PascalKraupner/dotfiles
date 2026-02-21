@@ -7,7 +7,7 @@ windows:
         - nvim
   - ai:
       panes:
-        - ai
+        - claude
   - lazygit:
       panes:
         - lazygit
