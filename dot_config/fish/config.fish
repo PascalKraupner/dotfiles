@@ -57,11 +57,16 @@ function muxn -d "Start a new numbered tmuxinator session"
         return 1
     end
     set -l project $argv[1]
-    set -l count 2
+    set -l count 1
     while tmux has-session -t "$project-$count" 2>/dev/null
         set count (math $count + 1)
     end
-    tmuxinator start $project -n "$project-$count"
+    set -l session_name "$project-$count"
+    set -l session_dir "$HOME/Development/$session_name"
+    if not test -d $session_dir
+        mkdir -p $session_dir
+    end
+    tmuxinator start $project -n $session_name --root=$session_dir
 end
 
 abbr -a j just
