@@ -57,6 +57,10 @@ function muxn -d "Start a new numbered tmuxinator session"
         return 1
     end
     set -l project $argv[1]
+    if not test -f "$HOME/.config/tmuxinator/$project.yml"
+        echo "No tmuxinator project: $project"
+        return 1
+    end
     set -l count 1
     while tmux has-session -t "$project-$count" 2>/dev/null
         set count (math $count + 1)
@@ -64,7 +68,7 @@ function muxn -d "Start a new numbered tmuxinator session"
     set -l session_name "$project-$count"
     set -l session_dir "$HOME/Development/$session_name"
     if not test -d $session_dir
-        mkdir -p $session_dir
+        set session_dir "$HOME/Development/$project"
     end
     tmuxinator start $project -n $session_name --root=$session_dir
 end
