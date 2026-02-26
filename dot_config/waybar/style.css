@@ -23,7 +23,6 @@
 #power-profiles-daemon,
 #pulseaudio,
 #idle_inhibitor,
-#custom-voxtype,
 #battery,
 #network,
 #tray,
@@ -93,20 +92,4 @@
   to {
     opacity: 0.7;
   }
-}
-
-/* Voxtype voice-to-text states */
-#custom-voxtype {
-  color: @comment;
-}
-
-#custom-voxtype.recording {
-  color: @red;
-  padding: 0 12px 0 8px;
-  animation: blink 0.6s ease-in-out infinite alternate;
-}
-
-#custom-voxtype.transcribing {
-  color: @yellow;
-  padding: 0 12px 0 8px;
 }

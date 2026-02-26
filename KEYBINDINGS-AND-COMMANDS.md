@@ -63,14 +63,6 @@ Open the fuzzy session manager with `Prefix + o`. Type to filter existing sessio
 | `Ctrl-p`        | Move selection down                        |
 | `?`             | Toggle preview pane                        |
 
-## Voxtype Voice Dictation
-
-| Key                 | Action                                                |
-| ------------------- | ----------------------------------------------------- |
-| `SUPER + V` (hold)  | Push-to-talk: hold to record, release to transcribe   |
-| `SUPER + SHIFT + V` | Toggle mode: press once to start, press again to stop |
-| `F12` or `Escape`   | Cancel recording (while in recording submap)          |
-
 ## LazyGit
 
 | Key | Context  | Action                                                      |

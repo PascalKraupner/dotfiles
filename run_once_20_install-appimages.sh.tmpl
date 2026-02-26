@@ -11,6 +11,37 @@ github_appimages=(
 INSTALL_DIR="$HOME/Applications"
 mkdir -p "$INSTALL_DIR"
 
+install_or_update_vibetyper() {
+    local url="https://cdn.vibetyper.com/releases/linux/VibeTyper.AppImage"
+    local latest_json="https://cdn.vibetyper.com/releases/latest.json"
+    local dest="$INSTALL_DIR/VibeTyper.AppImage"
+
+    echo "[*] Resolving latest VibeTyper version..."
+    local version
+    version=$(curl -s "$latest_json" | jq -r '.version // empty')
+
+    local version_file="$INSTALL_DIR/.vibetyper-version"
+    if [ -f "$version_file" ] && [ "$(cat "$version_file")" = "$version" ] && [ -f "$dest" ]; then
+        echo "[✔] VibeTyper $version already installed — skipping."
+        return
+    fi
+
+    if [ -f "$dest" ]; then
+        echo "[*] Uninstalling old VibeTyper..."
+        app-manager uninstall "$dest" 2>/dev/null || true
+        rm -f "$dest"
+    fi
+
+    echo "[*] Downloading VibeTyper $version..."
+    wget -O "$dest" "$url"
+    chmod +x "$dest"
+
+    echo "[*] Installing VibeTyper..."
+    app-manager install "$dest"
+    echo "$version" > "$version_file"
+    echo "[✔] VibeTyper $version installed."
+}
+
 install_or_update_appimage() {
     local repo="$1"
     local app_name
@@ -56,6 +87,8 @@ install_or_update_appimage() {
     app-manager install "$dest"
     echo "[✔] $filename installed."
 }
+
+install_or_update_vibetyper
 
 for repo in "${github_appimages[@]}"; do
     install_or_update_appimage "$repo"
