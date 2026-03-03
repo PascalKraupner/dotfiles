@@ -8,7 +8,7 @@
     "group/hardware",
     "hyprland/submap",
   ],
-  "modules-center": ["group/clock-group"],
+  "modules-center": ["clock"],
   "modules-right": [
     "power-profiles-daemon",
     "idle_inhibitor",
@@ -50,14 +50,6 @@
     },
   },
 
-  "group/clock-group": {
-    "orientation": "horizontal",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": true,
-    },
-    "modules": ["clock#standard", "clock#toronto", "clock#german"],
-  },
 
   "group/hardware": {
     "orientation": "horizontal",
@@ -69,7 +61,7 @@
     "tooltip": false,
   },
 
-  "clock#standard": {
+  "clock": {
     "format": "<span color='#f7768e' rise='500'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
 {{ if eq .chezmoi.hostname .hostnames.work -}}
@@ -79,17 +71,7 @@
 {{ end -}}
   },
 
-  "clock#german": {
-    "timezone": "Europe/Berlin",
-    "format": "<span rise='1000'></span><span letter_spacing='8000'> </span>{:%I:%M %p}",
-    "tooltip": false,
-  },
 
-  "clock#toronto": {
-    "timezone": "America/Toronto",
-    "format": "<span rise='1000'></span><span letter_spacing='6000'> </span>{:%I:%M %p}",
-    "tooltip": false,
-  },
   "cpu": {
     "interval": 5,
     "format": "   {usage}% | ",

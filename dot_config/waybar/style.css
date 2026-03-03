@@ -14,12 +14,9 @@
   margin: 2px 2px;
 }
 
-#clock-group {
-}
-
 #workspaces,
 #hardware,
-#clock-group,
+#clock,
 #power-profiles-daemon,
 #pulseaudio,
 #idle_inhibitor,
