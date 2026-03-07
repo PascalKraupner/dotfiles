@@ -73,16 +73,5 @@ chezmoi init yourusername --apply
 | [`dotfiles`](https://github.com/yourusername/dotfiles-public) | Public Dotfiles  |
 | `dotfiles-private` (private)                                  | Private Dotfiles |
 
----
-
----
-
-Press `T` inside the app to open the theme switcher and select **tokyo-night**, or set it permanently in `app.toml`:
-
-```toml
-theme = "tokyo-night"
-```
-
----
 
 REMOVE README-CHEZMOI ALSO FROM .chezmoignore
