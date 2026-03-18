@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Switches eDP-1 between 120Hz (AC) and 60Hz (battery)
+# Usage: set_refresh_rate         — set once based on current state
+#        set_refresh_rate --watch  — watch for AC changes and auto-switch
+
+MONITOR="eDP-1"
+AC_PATH="/sys/class/power_supply/ACAD/online"
+
+apply() {
+    INFO=$(hyprctl monitors -j | jq -r ".[] | select(.name == \"$MONITOR\")")
+    SCALE=$(echo "$INFO" | jq -r '.scale')
+    RES=$(echo "$INFO" | jq -r '"\(.width)x\(.height)"')
+    SCALE=${SCALE:-2}
+    RES=${RES:-preferred}
+
+    if [ "$(cat "$AC_PATH")" = "1" ]; then
+        hyprctl keyword monitor "$MONITOR,${RES}@120,auto,$SCALE,vrr,1"
+    else
+        hyprctl keyword monitor "$MONITOR,${RES}@60,auto,$SCALE,vrr,1"
+    fi
+}
+
+if [ "$1" = "--watch" ]; then
+    apply
+    prev=$(cat "$AC_PATH")
+    while true; do
+        cur=$(cat "$AC_PATH")
+        if [ "$cur" != "$prev" ]; then
+            apply
+            prev=$cur
+        fi
+        sleep 5
+    done
+else
+    apply
+fi
