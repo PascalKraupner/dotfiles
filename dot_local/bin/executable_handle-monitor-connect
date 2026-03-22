@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Listens for monitor connect events and re-applies wallpaper
+
+socat -U - UNIX-CONNECT:"$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock" |
+  while read -r line; do
+    if [[ "$line" == "monitoradded>>"* ]]; then
+      sleep 1
+      swww img ~/wallpapers/wallpaper.png
+    fi
+  done
